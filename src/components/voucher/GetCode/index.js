@@ -4,6 +4,12 @@ import './style.css'
 
 const GetCodeButton = (props) => {
   const handleRedemption = () => {
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: 'Code Redemption',
+      merchant: 'Theatre Tickets Direct'
+    })
+
     console.log('!')
     var urlParams = new URLSearchParams(window.location.search)
     let gclid = urlParams.getAll('gclid').length > 0 ? urlParams.getAll('gclid')[0] : ''
