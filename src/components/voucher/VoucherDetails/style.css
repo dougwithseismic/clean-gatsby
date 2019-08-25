@@ -1,0 +1,44 @@
+@media only screen {
+
+  .offer-container {
+    margin: 1em 0em
+  }
+  .media {
+    display: flex;
+    align-items: center;
+  }
+
+  .media-image {
+    display: none;
+    padding: 50px;
+    margin: 2em;
+    background-color: black;
+    color: white;
+  }
+
+  .is-exclusive {
+    text-transform: uppercase;
+    font-weight: 900;
+    color: red;
+  }
+
+ .offer-title {
+
+    font-size: 2em;
+
+  }
+} /* Define mobile styles - Mobile First */
+
+/* Medium screens - TABLET */
+@media only screen and (min-width: 40.063em) {
+} /* min-width 641px, medium screens */
+
+/* Large screens - DESKTOP */
+@media only screen and (min-width: 64.063em) {
+
+  .media-image {
+    display: block;
+  }
+  
+
+} /* min-width 1025px, large screens */
