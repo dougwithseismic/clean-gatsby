@@ -37,7 +37,7 @@ const GetCodeButton = (props) => {
     )
   } else {
     return (
-      <div className="offer-button" onClick={handleRedemption}>
+      <div className="offer-button" onClick={() => handleRedemption()}>
         Get Code
       </div>
     )
