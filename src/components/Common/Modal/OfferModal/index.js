@@ -11,6 +11,10 @@ const OfferModal = (props) => {
   const offer = modalContext.dealContent
   console.log(offer)
 
+  const handleVisitShop = () => {
+    window.location.href = offer.merchant.siteUrl
+  }
+
   return (
     <div className="offer-modal-content">
       {offer.isExclusive ? <span className="exclusive">Exclusive</span> : <Fragment />}
@@ -27,7 +31,7 @@ const OfferModal = (props) => {
         <span className="show-code">Deal Activated!</span>
       )}
 
-      <div className="visit-shop">Visit Shop</div>
+      <div className="visit-shop" onClick={() => handleVisitShop()}>Visit Shop</div>
     </div>
   )
 }

@@ -46,7 +46,7 @@ const MerchantPageTemplate = (props) => {
         <section className="main-offer-content">
           <div className="left-content">
             <div className="offer-stats">
-              <div className="available-offers content-box">{merchant.offers.length} Deals Live</div>
+              <div className="available-offers content-box">Live Offers: {merchant.offers.length}</div>
 
               {filters.map((filter) => {
                 return (
