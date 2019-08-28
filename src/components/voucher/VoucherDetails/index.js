@@ -8,16 +8,16 @@ const VoucherDetails = (props) => {
       <div className="offer-content">
         <div className="media">
           <div className="media-detail">
-            <p className="is-exclusive">Exclusive Code</p>
-            <h3 className="offer-title">Save 6% Off at TheatreTicketsDirect.co.uk</h3>
+            {/* <p className="is-exclusive">Exclusive Code</p> */}
+            <h3 className="offer-title">
+              {props.offer.title} at {props.merchant.name}
+            </h3>
             <p className="offer-description">
-              This exclusive code will save you 6% Off all orders at TheatreTicketsDirect.co.uk - Grab the code using
-              the button below and enter it at checkout. You won't find a better working code than this one! Valid until
-              31st Dec. 2019
+              {props.offer.description}
             </p>
-            <p>Expires 31.12.19</p>
+            {/* <p>Expires {props.offer.endDate}</p> */}
             <div className="get-code-button">
-              <GetCodeButton url="https://www.awin1.com/cread.php?awinmid=1936&awinaffid=322637" />
+              <GetCodeButton merchant={props.merchant} offer={props.offer} />
             </div>
           </div>
         </div>

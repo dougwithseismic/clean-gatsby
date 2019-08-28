@@ -7,20 +7,24 @@ const GetCodeButton = (props) => {
     window.dataLayer = window.dataLayer || []
     window.dataLayer.push({
       event: 'Code Redemption',
-      merchant: 'Theatre Tickets Direct'
+      merchant: props.merchant.name
     })
 
-    console.log('!')
+   // If it's a PPC link, we should know about the GCLID so we can pass it onto the affiliate network.
+   
     var urlParams = new URLSearchParams(window.location.search)
     let gclid = urlParams.getAll('gclid').length > 0 ? urlParams.getAll('gclid')[0] : ''
-    let handle = window.open('/?codeRedeem=1')
+    let handle = window.open(`/${props.merchant.slug}?codeRedeem=1`)
+
     handle.blur()
     window.focus()
-    window.location = `https://www.awin1.com/cread.php?awinmid=1936&awinaffid=322637&clickref=${gclid}&p=%5B%5Bhttps%3A%2F%2Fwww.theatreticketsdirect.co.uk%2Fbasket%5D%5D`
+    let split = props.merchant.siteUrl.split('&')
+    split.splice(1, 0, `clickref=${gclid}`)
+    let url = split.join('&')
+    window.location = url
   }
 
   const [ isRedemption, setIsRedemption ] = useState(false)
-  console.log(isRedemption)
 
   useEffect(() => {
     var urlParams = new URLSearchParams(window.location.search)
@@ -32,7 +36,7 @@ const GetCodeButton = (props) => {
     return (
       <div className="voucher-details">
         <h3>Your Discount Code</h3>
-        <div className="voucher-code">VOUCHNAUT9</div>
+        <div className="voucher-code">{props.offer.code ? props.offer.code : 'Deal Activated'}</div>
       </div>
     )
   } else {

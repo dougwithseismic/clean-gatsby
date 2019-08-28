@@ -1,7 +1,12 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+// We're wrapping everything in our Providers so we can consume them on all pages
 
-// You can delete this file if you're not using it
+import React from 'react'
+import { ModalProvider } from './src/context/ModalContext'
+require('typeface-questrial')
+
+
+export const wrapRootElement = ({ element }) => (
+  <ModalProvider>
+    {element}
+  </ModalProvider>
+)

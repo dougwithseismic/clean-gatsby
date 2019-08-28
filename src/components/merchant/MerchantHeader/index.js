@@ -5,7 +5,7 @@ const MerchantHeader = (props) => {
   return (
     <div>
       <a href={props.merchant.siteUrl}>
-        <h1>{props.merchant.name} Discount Codes 2019</h1>
+        <h1>{props.merchant.name} {props.merchant.primaryWord}s 2019</h1>
       </a>
     </div>
   )
