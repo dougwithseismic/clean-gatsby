@@ -12,6 +12,12 @@ const OfferModal = (props) => {
   console.log(offer)
 
   const handleVisitShop = () => {
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: 'Visit Store Click',
+      merchant: offer.merchant.name,
+      offerId: offer.id
+    })
     window.location.href = offer.merchant.siteUrl
   }
 
@@ -31,7 +37,9 @@ const OfferModal = (props) => {
         <span className="show-code">Deal Activated!</span>
       )}
 
-      <div className="visit-shop" onClick={() => handleVisitShop()}>Visit Shop</div>
+      <div className="visit-shop" onClick={() => handleVisitShop()}>
+        Visit Shop
+      </div>
     </div>
   )
 }

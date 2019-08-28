@@ -10,6 +10,13 @@ const OfferBox = (props) => {
 
   const handleRedemption = (offer) => {
     console.log('do it')
+
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: 'Code Redemption',
+      merchant: offer.merchant.name
+    })
+
     modalContext.toggleModal()
     modalContext.setDealContent(offer)
 
