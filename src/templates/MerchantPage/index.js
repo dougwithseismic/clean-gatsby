@@ -67,7 +67,7 @@ const MerchantPageTemplate = (props) => {
                 Active {merchant.name} Discount Codes / {merchant.discountTerm}s live in Sept 2019{' '}
               </h3>
               <span className="author">By Sarah - Brand Expert</span>
-              <p>
+              {/* <p>
                 Taking in a West End show, a beautifully-performed ballet, or a play can be one of the best ways to
                 spend an evening in London. With Theatre Tickets Direct, you can get some exceptional deals on highly
                 sought after West End performances, including hugely popular shows like The Lion King, Wicked and Book
@@ -87,7 +87,7 @@ const MerchantPageTemplate = (props) => {
                 If you are planning a trip to London, you can book with Theatre Tickets Direct to have your tickets left
                 with the concierge at your hotel. You can pick them up as you check in, to be sure you'll have them
                 ready for that special evening! Alternatively, tickets can be sent to your home by special delivery.{' '}
-              </p>
+              </p> */}
             </div>
           </div>
         </section>
