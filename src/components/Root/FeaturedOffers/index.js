@@ -9,7 +9,7 @@ const FeaturedOffers = (props) => {
     <section className="featured-offers">
       <div className="container">
         <h3 className="featured-offer-header">Featured Voucher Codes & Deals</h3>
-        <div className="featured-offers-list">
+        <ul className="featured-offers-list">
         <FeaturedOfferBox isExclusive />
         <FeaturedOfferBox />
         <FeaturedOfferBox />
@@ -24,7 +24,7 @@ const FeaturedOffers = (props) => {
         <FeaturedOfferBox />
         <FeaturedOfferBox isExclusive />
 
-        </div>
+        </ul>
       </div>
     </section>
   )

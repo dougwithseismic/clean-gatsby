@@ -6,7 +6,7 @@ import ExclusiveBadge from '../../Atoms/Voucher/exclusive'
 
 const FeaturedOfferBox = (props) => {
   return (
-    <div className="featured-offer">
+    <li className="featured-offer">
       {props.isExclusive ? (
         <div className="featured-offer-is-exclusive">
           <ExclusiveBadge />
@@ -35,7 +35,7 @@ const FeaturedOfferBox = (props) => {
         <div className="offer-title">Save 10% Off At Vouchernaut</div>
       </div>
       <div className="button-redeem" />
-    </div>
+    </li>
   )
 }
 
