@@ -5,12 +5,17 @@ import { Link } from 'gatsby'
 // Circular logos featured on '/' in the Featured Merchant section
 const FeaturedMerchantLogo = (props) => {
   const merchant = props.merchant
-  const logoSrc = `https://media.graphcms.com/resize=width:150,height:150/output=format:webp/${merchant.logo.handle}`
+  const logoSrcWebp = `https://media.graphcms.com/resize=width:150,height:150/output=format:webp/${merchant.logo
+    .handle}`
+  const logoSrcPng = `https://media.graphcms.com/resize=width:150,height:150/output=format:png/${merchant.logo.handle}`
 
   return (
     <li className="featured-merchant-logo">
       <Link to={merchant.slug}>
-        <img alt={`The ${merchant.name} Logo`} src={logoSrc} width="100%" height="100%" />
+        <picture>
+          <source srcset={logoSrcWebp} type="image/webp" />
+          <img alt={`The ${merchant.name} Logo`} src={logoSrcPng} width="100%" height="100%" />
+        </picture>
       </Link>
     </li>
   )

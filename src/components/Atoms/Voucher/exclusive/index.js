@@ -3,6 +3,7 @@ import exclusiveIcon from '../../../../images/exclusive_icon.svg'
 
 const exclusiveTag = (props) => {
   return (
+    <picture>
     <img
       src={exclusiveIcon}
       style={{
@@ -10,6 +11,8 @@ const exclusiveTag = (props) => {
         maxHeight: '100%'
       }}
     />
+
+    </picture>
   )
 }
 
