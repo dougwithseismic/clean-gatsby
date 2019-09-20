@@ -33,7 +33,7 @@ const FeaturedMerchants = (props) => {
       <div className="container">
         <h3>Featured merchants</h3>
         <div className="featured-merchants-view-all">View all merchants</div>
-        <div className="merchant-box">
+        <ul className="merchant-box">
           {/* Multiplying it because I dont have 4 merchants in db */}
           {featuredMerchantList.map((merchant, index) => <FeaturedMerchantLogo merchant={merchant} key={index} />)}
           {featuredMerchantList.map((merchant) => <FeaturedMerchantLogo merchant={merchant} />)}
@@ -41,10 +41,7 @@ const FeaturedMerchants = (props) => {
           {featuredMerchantList.map((merchant) => <FeaturedMerchantLogo merchant={merchant} />)}
           {featuredMerchantList.map((merchant) => <FeaturedMerchantLogo merchant={merchant} />)}
           {featuredMerchantList.map((merchant) => <FeaturedMerchantLogo merchant={merchant} />)}
-          {featuredMerchantList.map((merchant) => <FeaturedMerchantLogo merchant={merchant} />)}
-          {featuredMerchantList.map((merchant) => <FeaturedMerchantLogo merchant={merchant} />)}
-          {featuredMerchantList.map((merchant) => <FeaturedMerchantLogo merchant={merchant} />)}
-        </div>
+        </ul>
       </div>
     </section>
   )

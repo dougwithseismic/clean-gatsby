@@ -28,12 +28,10 @@
   left: 5%;
 }
 
-.featured-offer-merchant-logologo {
+.featured-offer-merchant-logo {
   position: absolute;
   width: 60px;
   height: 60px;
-  background-image: url('../../../images/favicon.png');
-  background-size: contain;
   box-shadow: 0px 0px 10px #cf8ce8;
   bottom: 0;
   left: 50%;

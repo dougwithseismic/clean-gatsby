@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import './style.css'
 import imageUrl from '../../../images/merchant_adidas3.png'
+import favicon from '../../../images/favicon.png'
 import ExclusiveBadge from '../../Atoms/Voucher/exclusive'
 
 const FeaturedOfferBox = (props) => {
@@ -25,7 +26,9 @@ const FeaturedOfferBox = (props) => {
           borderRadius: '10px 10px 0 0'
         }}
       >
-        <div className="featured-offer-merchant-logo" />
+        <div className="featured-offer-merchant-logo">
+          <img src={favicon} width='100%'/>
+        </div>
       </div>
       <div className="featured-offer-details">
         <div className="offer-type">voucher code</div>
