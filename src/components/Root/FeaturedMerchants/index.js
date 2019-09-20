@@ -36,11 +36,6 @@ const FeaturedMerchants = (props) => {
         <ul className="merchant-box">
           {/* Multiplying it because I dont have 4 merchants in db */}
           {featuredMerchantList.map((merchant, index) => <FeaturedMerchantLogo merchant={merchant} key={index} />)}
-          {featuredMerchantList.map((merchant) => <FeaturedMerchantLogo merchant={merchant} />)}
-          {featuredMerchantList.map((merchant) => <FeaturedMerchantLogo merchant={merchant} />)}
-          {featuredMerchantList.map((merchant) => <FeaturedMerchantLogo merchant={merchant} />)}
-          {featuredMerchantList.map((merchant) => <FeaturedMerchantLogo merchant={merchant} />)}
-          {featuredMerchantList.map((merchant) => <FeaturedMerchantLogo merchant={merchant} />)}
         </ul>
       </div>
     </section>

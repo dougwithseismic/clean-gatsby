@@ -27,7 +27,7 @@ const FeaturedOfferBox = (props) => {
         }}
       >
         <div className="featured-offer-merchant-logo">
-          <img src={favicon} width='100%'/>
+        <ExclusiveBadge />
         </div>
       </div>
       <div className="featured-offer-details">

@@ -25,6 +25,8 @@ const IndexPage = () => {
         <FeaturedMerchants />
 
         {/* Latest Vouchers */}
+
+{/*         
         <section className="latest-offers">
           <div className="container">
             <h3>Latest Voucher Codes & Deals</h3>
@@ -33,7 +35,7 @@ const IndexPage = () => {
             <div className="latest-offer">3</div>
             <div className="latest-offer">4</div>
           </div>
-        </section>
+        </section> */}
 
         {/* Footer */}
         <section className="footer">
