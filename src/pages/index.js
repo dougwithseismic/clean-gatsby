@@ -1,24 +1,55 @@
 import React, { Fragment } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import SEO from '../components/seo'
-import VoucherDetails from '../components/voucher/VoucherDetails'
-import MerchantHeader from '../components/merchant/MerchantHeader'
+import SEO from '../components/_int/seo'
+import NavBar from '../components/Layout/NavBar'
+import HeroRoot from '../components/Root/Hero'
+import FeaturedMerchants from '../components/Root/FeaturedMerchants'
+import FeaturedOffers from '../components/Root/FeaturedOffers'
 
-let merchant = {
-  name: 'Theatre Tickets Direct',
-  siteUrl: 'https://www.awin1.com/cread.php?awinmid=1936&awinaffid=322637'
-}
+import './style.css'
 
 const IndexPage = () => {
   return (
     <Fragment>
-      <SEO title="Theatre Tickets Direct Discount Codes" />
+      <SEO title="Home" />
       <div className="content">
-        <p>
-          We've been partnered with Theatre Tickets Direct to offer an exclusive code not available anywhere else
-          online. We don't have a fancy site, we don't ask for emails and we don't spam your inbox - all we do is
-          deliver working discount codes as fast as possible.
-        </p>
+        {/* Nav Bar */}
+        <NavBar />
+        {/* Hero */}
+        <HeroRoot />
+
+        {/* Featured Offers */}
+        <FeaturedOffers />
+        
+        {/* Featured Merchants */}
+        <FeaturedMerchants />
+
+        {/* Latest Vouchers */}
+        <section className="latest-offers">
+          <div className="container">
+            <h3>Latest Voucher Codes & Deals</h3>
+            <div className="latest-offer">1</div>
+            <div className="latest-offer">2</div>
+            <div className="latest-offer">3</div>
+            <div className="latest-offer">4</div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <section className="footer">
+          <div className="left-footer">Logo</div>
+          <div className="middle-footer">
+            <div>Merchants</div>
+            <div>About</div>
+            <div>Contact</div>
+          </div>
+
+          <div className="right-footer">
+            <div className="social-link">Facebook</div>
+            <div className="social-link">Instagram</div>
+            <div className="social-link">Twitter</div>
+          </div>
+        </section>
       </div>
     </Fragment>
   )

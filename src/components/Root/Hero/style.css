@@ -1,0 +1,35 @@
+/* Small screens - MOBILE */
+@media only screen {
+  .hero-content {
+    font-family: sofia-pro-soft, sans-serif;
+    color: white;
+    background-image: linear-gradient(#140f2b 0%, rgba(20, 15, 43, 0) 100%),
+      linear-gradient(to right, #140f2b80, #140f2b80), url('../../../assets/planets_hero.svg'),
+      linear-gradient(#0e122a 0%, #4d3293 100%);
+
+    padding: 1em;
+
+    min-height: 40vh;
+  }
+
+  .hero-content .left-content {
+    padding: 1em;
+  }
+
+  .hero-title {
+    color: white;
+    font-size: 30px;
+    line-height: 1em;
+    font-weight: 500;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .vnaut-mascot {
+    position: absolute;
+    right: 10%;
+  }
+} /* Define mobile styles - Mobile First */

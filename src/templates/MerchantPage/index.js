@@ -1,144 +1,66 @@
-import React, { useState, useContext, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
-import { graphql } from 'gatsby'
+import NavBar from '../../components/Layout/NavBar'
 
-import './merchantPage.css'
-
-import Layout from '../../components/Common/Layout'
-import SEO from '../../components/seo'
-
-import MerchantDetails from '../../components/MerchantPage/MerchantDetails'
-import OfferBox from '../../components/MerchantPage/OfferBox'
-import OfferModal from '../../components/Common/Modal/OfferModal'
-import Modal from '../../components/Common/Modal'
-
-import ModalContext from '../../context/ModalContext'
-
-const MerchantPageTemplate = (props) => {
-  console.log('these are props', props)
-  const filters = [ 'all', 'codes' ]
-
-  const merchant = props.data.gcms.merchant
-  const offers = merchant.offers
-
-  // This logic allows us to filter our codes by their type - A prerequisite for vouchersites according to some governing body
-  const [ currentFilter, setCurrentFilter ] = useState('all')
-
-  let filteredOffers =
-    currentFilter !== 'all'
-      ? offers.filter((obj) => {
-          return obj.type === currentFilter
-        })
-      : offers
-
-  const handleFilter = (key) => {
-    setCurrentFilter(key)
-  }
-
+const merchantPage = (props) => {
   return (
     <Fragment>
-      <Layout>
-        <SEO title={`${merchant.name} ${merchant.discountTerm}s 2019`} />
+      <NavBar />
 
-        <MerchantDetails merchant={merchant} />
+      {/* Hero Banner - Merchant */}
 
-        <section className="main-offer-content">
-          <div className="left-content">
-            <div className="offer-stats">
-              <div className="available-offers content-box">Live Offers: {merchant.offers.length}</div>
+      <div className="merchant-hero">
+        <div className="merchant-details">
+          <div className="merchant-logo">LOGO</div>
+          <h1 className="merchant-name">Adidas</h1>
+          <h3 className="category">Category</h3>
+        </div>
+      </div>
+      {/* Section Offers */}
+      <div className="offers-section">
+        <div className="hero-offer">HERO OFFER COMPONENT</div>
+        <h3>Latest Voucher Codes</h3>
+        <div className="offer-count">14 Live</div>
+        <div className="voucher-offers-box">
+          <div className="voucher-offers">1</div>
+          <div className="voucher-offers" />
+          <div className="voucher-offers">3</div>
+          <div className="voucher-offers">4</div>
+          <div className="voucher-offers">5</div>
+          <div className="voucher-offers">6</div>
+        </div>
+        <div className="deals-offers-box">
+          <div className="deals-offers">1</div>
+          <div className="deals-offers" />
+          <div className="deals-offers">3</div>
+          <div className="deals-offers">4</div>
+          <div className="deals-offers">5</div>
+          <div className="deals-offers">6</div>
+        </div>
+      </div>
 
-              {filters.map((filter) => {
-                return (
-                  <div className="filter-box content-box" key={filter} onClick={() => handleFilter(filter)}>
-                    {filter}
-                  </div>
-                )
-              })}
-            </div>
+      <div className="merchant-description">
+        <h1>Adidas.co.uk Promo Codes & Discounts September 2019</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+        </p>
+      </div>
 
-            {filteredOffers.map((offer) => {
-              return <OfferBox offer={offer} />
-            })}
-          </div>
-          <div className="right-content">
-            <div className="merchant-description white-box">
-              <h3>
-                Active {merchant.name} Discount Codes / {merchant.discountTerm}s live in Sept 2019{' '}
-              </h3>
-              <span className="author">By Sarah - Brand Expert</span>
-              {/* <p>
-                Taking in a West End show, a beautifully-performed ballet, or a play can be one of the best ways to
-                spend an evening in London. With Theatre Tickets Direct, you can get some exceptional deals on highly
-                sought after West End performances, including hugely popular shows like The Lion King, Wicked and Book
-                of Mormon.
-              </p>
 
-              <p>
-                Good seats can come even cheaper when you use a Theatre Tickets Direct promo code to make your booking
-                online! Whether you want to see a critically acclaimed stage production or a fun musical your family
-                will love, you will find the best tickets at the best prices at Theatre Tickets Direct.
-              </p>
-            </div>
-            <div className="trivia-box white-box">
+      {/* Latest voucher Codes */}
+      {/* Latest Deals */}
 
-              <h3>Did you know?</h3>
-              <p>
-                If you are planning a trip to London, you can book with Theatre Tickets Direct to have your tickets left
-                with the concierge at your hotel. You can pick them up as you check in, to be sure you'll have them
-                ready for that special evening! Alternatively, tickets can be sent to your home by special delivery.{' '}
-              </p> */}
-            </div>
-          </div>
-        </section>
-
-        <Modal>
-          <OfferModal />
-        </Modal>
-      </Layout>
+      {/* Rich content */}
+      {/* MErchant Description */}
+      {/* Useful Linmks */}
+      {/* Footer */}
     </Fragment>
   )
 }
 
-MerchantPageTemplate.propTypes = {}
+merchantPage.propTypes = {}
 
-export default MerchantPageTemplate
-
-export const pageQuery = graphql`
-  query MerchantBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
-    gcms {
-      merchant(where: { slug: $slug }) {
-        id
-        name
-        slug
-        siteUrl
-        siteName
-        description
-        richContent
-        discountTerm
-        offers {
-          id
-          title
-          description
-          startDate
-          endDate
-          offerUrl
-          useCount
-          code
-          isExclusive
-          merchant {
-            id
-            name
-            siteUrl
-          }
-        }
-      }
-    }
-  }
-`
+export default merchantPage

@@ -1,0 +1,30 @@
+.featured-merchants {
+  color: white;
+  background-image: linear-gradient(#140f2b 0%, rgba(20, 15, 43, 0) 100%),
+    linear-gradient(to right, #140f2b80, #140f2b80), url('../../../assets/planets_hero.svg'),
+    linear-gradient(#0e122a 0%, #4d3293 100%);
+
+  padding: 1em;
+
+  min-height: 40vh;
+}
+
+.featured-merchants h3 {
+  text-transform: capitalize;
+  font-weight:500;
+  font-size: 18px;
+  padding: 0 0 1em;
+
+}
+
+
+.featured-merchants-view-all {
+    display: none
+}
+
+.merchant-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 0 2em;
+}

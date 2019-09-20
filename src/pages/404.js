@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import SEO from '../components/seo'
+import SEO from '../components/_int/seo'
 
 const NotFoundPage = () => (
   <Fragment>

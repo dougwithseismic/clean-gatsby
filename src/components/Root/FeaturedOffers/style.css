@@ -1,0 +1,26 @@
+section .featured-offers {
+  display: flex;
+  justify-content: center;
+  background: #f4f4f4 0% 0% no-repeat padding-box;
+}
+
+.featured-offer-header {
+  font-weight:500;
+  font-size: 18px;
+
+  color: #37003c;
+}
+
+.featured-offers-list {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  overflow-x:auto;
+  padding: 1em 0 2em;
+
+  scroll-snap-type: x mandatory;
+
+}
+
+.featured-offers-list::-webkit-scrollbar {
+}
