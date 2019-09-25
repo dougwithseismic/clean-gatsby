@@ -4,7 +4,7 @@
     font-family: sofia-pro-soft, sans-serif;
     color: white;
     background: linear-gradient(#140f2b 0%, rgba(20, 15, 43, 0) 100%), linear-gradient(to right, #140f2b80, #630a862c),
-      url('../../../assets/planets_hero.svg') no-repeat right, linear-gradient(#140f2b 0%, rgb(116, 18, 103) 100%);
+      url('../../../assets/planets_hero.svg') no-repeat fixed right , linear-gradient(#140f2b 0%, rgb(116, 18, 103) 100%);
 
     align-items: center;
     padding: 0em 1em;

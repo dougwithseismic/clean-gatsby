@@ -2,7 +2,7 @@
 @media only screen {
   .merchant-hero {
     background: linear-gradient(to right, #140f2b80, #630a862c),
-      20% 0% / cover no-repeat url('../../../assets/planets_hero.svg'),
+      20% 0% / cover fixed no-repeat url('../../../assets/planets_hero.svg'),
       linear-gradient(to right, #0e122a 0%, #4d3293 100%);
     width: 100%;
     min-height: 250px;
