@@ -41,21 +41,7 @@ const IndexPage = () => {
 
         <Footer />
 
-        {/* Footer */}
-        <section className="footer">
-          <div className="left-footer">Logo</div>
-          <div className="middle-footer">
-            <div>Merchants</div>
-            <div>About</div>
-            <div>Contact</div>
-          </div>
 
-          <div className="right-footer">
-            <div className="social-link">Facebook</div>
-            <div className="social-link">Instagram</div>
-            <div className="social-link">Twitter</div>
-          </div>
-        </section>
       </div>
       {/* <CookieBar /> */}
     </Fragment>

@@ -4,11 +4,21 @@ import React from 'react'
 import { ModalProvider } from './src/context/ModalContext'
 import './global.css'
 
-require('typeface-questrial')
-
-
 export const wrapRootElement = ({ element }) => (
   <ModalProvider>
-    {element}
+    <div
+      style={{
+        position: 'relative',
+        minHeight: '100vh'
+      }}
+    >
+      <div
+        style={{
+          paddingBottom: '300px'
+        }}
+      >
+        {element}
+      </div>
+    </div>
   </ModalProvider>
 )

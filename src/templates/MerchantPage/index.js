@@ -6,6 +6,8 @@ import NavBar from '../../components/Layout/NavBar'
 import MerchantHero from '../../components/MerchantPage/Hero'
 import MerchantDescription from '../../components/MerchantPage/MerchantDescription'
 import MainOfferBox from '../../components/MerchantPage/MainOfferBox'
+import Footer from '../../components/Layout/Footer'
+
 import './merchantPage.css'
 
 const merchantPage = (props) => {
@@ -34,6 +36,8 @@ const merchantPage = (props) => {
           </div>
         </div>
       </div>
+      <Footer />
+
     </Fragment>
   )
 }
