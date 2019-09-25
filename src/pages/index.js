@@ -15,17 +15,6 @@ const IndexPage = () => {
 
   return (
     <Fragment>
-        <div
-      style={{
-        position: 'relative',
-        minHeight: '100vh',
-      }}
-    >
-      <div
-        style={{
-          paddingBottom: '300px'
-        }}
-      >
       <SEO title="Home" />
       <div className="content">
         {/* Nav Bar */}
@@ -55,8 +44,6 @@ const IndexPage = () => {
         <Footer />
 
 
-      </div>
-      </div>
       </div>
       {/* <CookieBar /> */}
 
