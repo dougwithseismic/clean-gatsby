@@ -21,11 +21,13 @@ const merchantPage = (props) => {
           <MerchantDescription merchant={merchant} />
 
           <div className="offers-content container">
-            <ul className="offers-list">
-              <li>
-                <MainOfferBox merchant={merchant} />
-              </li>
-            </ul>
+            <div className="offers-list">
+              <MainOfferBox merchant={merchant} />
+              <div className="all-offers">
+                <div className="header-left">Latest Voucher Codes</div>
+                <div className="header-right">Live Offers: {merchant.offers.length}</div>
+              </div>
+            </div>
 
             {/* Exclusive */}
             {/* Rest */}

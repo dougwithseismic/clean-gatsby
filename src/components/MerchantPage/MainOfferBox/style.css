@@ -29,7 +29,6 @@
 
   .main-offer-box-detail {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     padding: 1em 0;
     border-bottom-left-radius: 10px;
@@ -41,9 +40,6 @@
   .box-top-details {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 
     font-size: 1.2rem;
     font-weight: 600;
@@ -63,9 +59,17 @@
     max-width: 60%;
   }
 
+.main-offer-type, .main-offer-title {
+  margin-left: 1em
+}
+
   .main-offer-type {
-    text-align: left;
     color: #ff2882;
+    text-align: left;
+  }
+
+  .main-offer-title {
+    text-align: left
   }
 
   .exclusive-badge {
@@ -128,6 +132,11 @@
 
   .main-offer-box-button {
     margin-right: 1em
+  }
+
+  .main-offer-type {
+    text-align: left;
+
   }
 } /* min-width 641px, medium screens */
 
