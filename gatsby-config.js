@@ -2,10 +2,12 @@ module.exports = {
   siteMetadata: {
     title: `Vouchernaut.com`,
     description: `Fast discounts. No fuss.`,
-    author: `@gatsbyjs`
+    author: `@gatsbyjs`,
+    siteUrl: `https://vouchernaut.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
