@@ -11,6 +11,8 @@ import CookieBar from '../components/Layout/CookieBar'
 import './style.css'
 
 const IndexPage = () => {
+
+
   return (
     <Fragment>
       <SEO title="Home" />
