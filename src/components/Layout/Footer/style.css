@@ -2,6 +2,7 @@
 
 .footer {
   display: flex;
+  align-self: flex-end;
   flex-direction: column;
   justify-content: center;
   align-items: center;

@@ -14,7 +14,7 @@ const IndexPage = () => {
 
 
   return (
-    <Fragment>
+    <div className="page-container">
       <SEO title="Home" />
       <div className="content">
         {/* Nav Bar */}
@@ -47,7 +47,7 @@ const IndexPage = () => {
       </div>
       {/* <CookieBar /> */}
 
-    </Fragment>
+    </div>
   )
 }
 
