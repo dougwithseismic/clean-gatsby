@@ -2,6 +2,8 @@
 
 import React from 'react'
 import { ModalProvider } from './src/context/ModalContext'
+import './global.css'
+
 require('typeface-questrial')
 
 

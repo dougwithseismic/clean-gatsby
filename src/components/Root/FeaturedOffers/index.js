@@ -10,20 +10,10 @@ const FeaturedOffers = (props) => {
       <div className="container">
         <h3 className="featured-offer-header">Featured Voucher Codes & Deals</h3>
         <ul className="featured-offers-list">
-        <FeaturedOfferBox isExclusive />
-        <FeaturedOfferBox />
-        <FeaturedOfferBox />
-        <FeaturedOfferBox isExclusive />
-        <FeaturedOfferBox />
-        <FeaturedOfferBox />
-        <FeaturedOfferBox isExclusive />
-        <FeaturedOfferBox />
-        <FeaturedOfferBox />
-        <FeaturedOfferBox isExclusive />
-        <FeaturedOfferBox />
-        <FeaturedOfferBox />
-        <FeaturedOfferBox isExclusive />
-
+          <FeaturedOfferBox isExclusive />
+          <FeaturedOfferBox />
+          <FeaturedOfferBox />
+          <FeaturedOfferBox isExclusive />
         </ul>
       </div>
     </section>

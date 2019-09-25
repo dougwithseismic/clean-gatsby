@@ -3,13 +3,18 @@
   .hero-content {
     font-family: sofia-pro-soft, sans-serif;
     color: white;
-    background-image: linear-gradient(#140f2b 0%, rgba(20, 15, 43, 0) 100%),
-      linear-gradient(to right, #140f2b80, #140f2b80), url('../../../assets/planets_hero.svg'),
-      linear-gradient(#0e122a 0%, #4d3293 100%);
+    background: linear-gradient(#140f2b 0%, rgba(20, 15, 43, 0) 100%), linear-gradient(to right, #140f2b80, #630a862c),
+      url('../../../assets/planets_hero.svg') no-repeat right, linear-gradient(#140f2b 0%, rgb(116, 18, 103) 100%);
 
-    padding: 1em;
+    align-items: center;
+    padding: 0em 1em;
+    min-height: 85vh;
+  }
 
-    min-height: 40vh;
+  .hero-content .container {
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 50px 0;
   }
 
   .hero-content .left-content {
@@ -18,18 +23,73 @@
 
   .hero-title {
     color: white;
-    font-size: 30px;
+    font-size: 2.5em;
     line-height: 1em;
     font-weight: 500;
+    letter-spacing: -2px;
+  }
+
+  .left-content h1 {
+    margin: 0;
   }
 
   .hero-subtitle {
-    font-size: 14px;
+    font-size: 1em;
     font-weight: 400;
   }
-
-  .vnaut-mascot {
-    position: absolute;
-    right: 10%;
-  }
 } /* Define mobile styles - Mobile First */
+
+@media only screen and (max-width: 40em) {
+} /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+/* Medium screens - TABLET */
+@media only screen and (min-width: 40.063em) {
+  .hero-title {
+    font-size: 4em;
+    max-width: 80%;
+  }
+
+  .hero-content .container {
+    flex-direction: row;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25em;
+    max-width: 80%;
+  }
+} /* min-width 641px, medium screens */
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+} /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+/* Large screens - DESKTOP */
+@media only screen and (min-width: 64.063em) {
+  .hero-content .container {
+    margin: 75px;
+  }
+
+  .hero-title {
+    font-size: 4em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25em;
+  }
+} /* min-width 1025px, large screens */
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+} /* min-width 1024px and max-width 1440px, use when QAing large screen-only issues */
+
+/* XLarge screens */
+@media only screen and (min-width: 90.063em) {
+  .left-content {
+    max-width: 50%;
+  }
+} /* min-width 1441px, xlarge screens */
+
+@media only screen and (min-width: 90.063em) and (max-width: 120em) {
+} /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+
+/* XXLarge screens */
+@media only screen and (min-width: 120.063em) {
+} /* min-width 1921px, xlarge screens */

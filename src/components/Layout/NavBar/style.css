@@ -2,25 +2,52 @@
 @media only screen {
   .navigation-main {
     display: flex;
-    justify-content: flex-start;
-    padding: 20px;
-    background: transparent linear-gradient(100deg, #140f2b 0%, #281853 100%) 0% 0% no-repeat padding-box;
-    opacity: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* background: transparent linear-gradient(100deg, #37003c 0%, #281853 100%) 0% 0% no-repeat padding-box; */
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #140f2b80, #630a862c), linear-gradient(to right, #0e122a 0%, #4d3293 100%);
     color: white;
-    border-bottom: 1px solid rgb(149, 131, 226);
+    width: 100%;
+    padding: 0.3em 0em;
+  }
+
+  .navbar .container {
+    padding: 0.18em 0.18em;
+  }
+
+  .black-top {
+    display: none;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    padding: auto;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 100%;
   }
 
   .navigation-logo {
-    width: 200px;
+    width: 175px;
+    max-width: 90%;
+    padding: 0.2em
   }
 
-  .right-content {
+  .nav-right-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  .right-content .nav-item {
+  .nav-right-content .nav-item {
     display: none;
   }
 } /* Define mobile styles - Mobile First */
@@ -30,22 +57,27 @@
 
 /* Medium screens - TABLET */
 @media only screen and (min-width: 40.063em) {
-  .navigation-main {
-    justify-content: center;
-    background: transparent;
-    border-bottom: transparent;
-
+  .black-top {
+    display: flex;
   }
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    border-bottom: transparent;
+    background: #140f2b;
+  }
+
   .navigation-logo {
     max-height: 2em;
   }
 
-  .right-content {
+  .nav-right-content {
     justify-content: flex-end;
     margin-left: auto;
   }
 
-  .right-content .nav-item {
+  .nav-right-content .nav-item {
     padding: 0em 1em;
     display: block;
   }

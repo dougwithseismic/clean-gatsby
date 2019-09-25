@@ -5,6 +5,8 @@ import NavBar from '../components/Layout/NavBar'
 import HeroRoot from '../components/Root/Hero'
 import FeaturedMerchants from '../components/Root/FeaturedMerchants'
 import FeaturedOffers from '../components/Root/FeaturedOffers'
+import Footer from '../components/Layout/Footer'
+import CookieBar from '../components/Layout/CookieBar'
 
 import './style.css'
 
@@ -20,13 +22,13 @@ const IndexPage = () => {
 
         {/* Featured Offers */}
         <FeaturedOffers />
-        
+
         {/* Featured Merchants */}
         <FeaturedMerchants />
 
         {/* Latest Vouchers */}
 
-{/*         
+        {/*         
         <section className="latest-offers">
           <div className="container">
             <h3>Latest Voucher Codes & Deals</h3>
@@ -36,6 +38,8 @@ const IndexPage = () => {
             <div className="latest-offer">4</div>
           </div>
         </section> */}
+
+        <Footer />
 
         {/* Footer */}
         <section className="footer">
@@ -53,6 +57,7 @@ const IndexPage = () => {
           </div>
         </section>
       </div>
+      {/* <CookieBar /> */}
     </Fragment>
   )
 }

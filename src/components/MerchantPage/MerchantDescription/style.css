@@ -1,35 +1,21 @@
 /* Small screens - MOBILE */
 @media only screen {
-  .featured-offers {
-    display: flex;
-    justify-content: center;
-    background: #f4f4f4 0% 0% no-repeat padding-box;
+  .merchant-description-content {
+    font-size: 10px;
+    order: 2;
+    background: white;
+    padding: 2em;
+    border-radius: 5px
   }
 
-  .featured-offers .container {
-    overflow: hidden;
+  .merchant-description-content h1 {
     margin: 0;
-    padding: 0;
-    flex-direction: column;
-    max-width: 100%
+    line-height: 29px;
+    color: #140f2b;
   }
 
-  .featured-offer-header {
-    font-weight: 500;
-    font-size: 18px;
-
-    color: #37003c;
-  }
-
-  .featured-offers-list {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    overflow-x: scroll;
-    padding: 2em 0;
-    margin: 0;
-
-    scroll-snap-type: x mandatory;
+  .merchant-description-content .title-small {
+    margin: 1em 0;
   }
 } /* Define mobile styles - Mobile First */
 
@@ -38,6 +24,9 @@
 
 /* Medium screens - TABLET */
 @media only screen and (min-width: 40.063em) {
+  .merchant-description-content {
+    font-size: 16px;
+  }
 } /* min-width 641px, medium screens */
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
@@ -45,6 +34,11 @@
 
 /* Large screens - DESKTOP */
 @media only screen and (min-width: 64.063em) {
+  .merchant-description-content {
+    order: 1;
+    border-radius: 5px;
+    width: 180px;
+  }
 } /* min-width 1025px, large screens */
 
 @media only screen and (min-width: 64.063em) and (max-width: 90em) {
@@ -52,6 +46,9 @@
 
 /* XLarge screens */
 @media only screen and (min-width: 90.063em) {
+  .merchant-description-content {
+    width: 360px;
+  }
 } /* min-width 1441px, xlarge screens */
 
 @media only screen and (min-width: 90.063em) and (max-width: 120em) {
