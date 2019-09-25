@@ -29,7 +29,7 @@ section {
 .button {
   background-color: #ff2882;
   padding: 1em;
-  margin: 10px;
+  margin: 10px 0;
   color: white;
   border-radius: 5px;
   text-transform: uppercase;

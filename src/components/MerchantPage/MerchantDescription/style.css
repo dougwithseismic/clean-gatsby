@@ -40,6 +40,10 @@
     border-radius: 5px;
     width: 180px;
   }
+
+  .merchant-description-content h1 {
+    font-size: 1.5em
+  }
 } /* min-width 1025px, large screens */
 
 @media only screen and (min-width: 64.063em) and (max-width: 90em) {

@@ -6,6 +6,7 @@ import NavBar from '../../components/Layout/NavBar'
 import MerchantHero from '../../components/MerchantPage/Hero'
 import MerchantDescription from '../../components/MerchantPage/MerchantDescription'
 import MainOfferBox from '../../components/MerchantPage/MainOfferBox'
+import MerchantMarkdown from '../../components/MerchantPage/MerchantMarkdown'
 import Footer from '../../components/Layout/Footer'
 
 import './merchantPage.css'
@@ -17,7 +18,6 @@ const merchantPage = (props) => {
     <Fragment>
       <NavBar />
       <MerchantHero merchant={merchant} />
-
       <div className="merchant-offer-content">
         <div className="container">
           <MerchantDescription merchant={merchant} />
@@ -26,8 +26,18 @@ const merchantPage = (props) => {
             <div className="offers-list">
               <MainOfferBox merchant={merchant} />
               <div className="all-offers">
-                <div className="header-left">Latest Voucher Codes</div>
-                <div className="header-right">Live Offers: {merchant.offers.length}</div>
+                <div className="offer-headers">
+                  <div className="header-left">Latest Voucher Codes</div>
+                  <div className="header-right">Live Offers: {merchant.offers.length}</div>
+                </div>
+
+                {merchant.markdown ? (
+                  <div className="merchant-markdown">
+                    <MerchantMarkdown merchant={merchant} />
+                  </div>
+                ) : (
+                  <Fragment />
+                )}
               </div>
             </div>
 
@@ -37,7 +47,6 @@ const merchantPage = (props) => {
         </div>
       </div>
       <Footer />
-
     </Fragment>
   )
 }
@@ -63,6 +72,7 @@ export const pageQuery = graphql`
         description
         richContent
         discountTerm
+        markdown
         logo {
           height
           width
