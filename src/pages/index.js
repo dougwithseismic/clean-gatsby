@@ -11,10 +11,8 @@ import CookieBar from '../components/Layout/CookieBar'
 import './style.css'
 
 const IndexPage = () => {
-
-
   return (
-    <div className="page-container">
+    <Fragment>
       <SEO title="Home" />
       <div className="content">
         {/* Nav Bar */}
@@ -42,12 +40,9 @@ const IndexPage = () => {
         </section> */}
 
         <Footer />
-
-
       </div>
       {/* <CookieBar /> */}
-
-    </div>
+    </Fragment>
   )
 }
 
