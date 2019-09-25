@@ -10,11 +10,7 @@ const MerchantDescription = (props) => {
       <h1>
         {merchant.name} {merchant.discountTerm}s 2019
       </h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in.
-      </p>
+      <p>{merchant.description ? merchant.description : <Fragment />}</p>
       <div className="separator" />
       <div className="title-small">Useful Links</div>
       <div className="button indigo">Visit website</div>
