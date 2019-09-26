@@ -30,14 +30,14 @@ const MerchantHero = (props) => {
             </h3>
           </div>
         </div>
-        <div className="merchant-right-content">
-          {/* <div className="merchant-mascot">
+        {/* <div className="merchant-right-content">
+          <div className="merchant-mascot">
             <picture>
               <source srcSet={mascotPng} type="image/png" />
               <img alt="Vouchernaut Mascot" src={mascotSvg} />
             </picture>
-          </div> */}
-        </div>
+          </div>
+        </div> */}
       </div>
 
     </div>
