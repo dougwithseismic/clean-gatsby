@@ -18,7 +18,10 @@ const merchantPage = (props) => {
   const merchant = props.data.gcms.merchant
   return (
     <Fragment>
-      <SEO title={`Save at ${merchant.name} with our September 2019 ${merchant.discountTerm}s 👩‍🚀 Offers Live - ${merchant.offers.length}. All codes are tested and live. Get our best ${merchant.name} offers today!`} />
+      <SEO
+        title={`Save at ${merchant.name} with our September 2019 ${merchant.discountTerm}s 👩‍🚀 Offers Live - ${merchant
+          .offers.length}. All codes are tested and live. Get our best ${merchant.name} offers today!`}
+      />
 
       <NavBar />
       <MerchantHero merchant={merchant} />

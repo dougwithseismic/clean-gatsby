@@ -1,11 +1,14 @@
 import React, { Fragment } from 'react'
 import ReactMarkdown from 'react-markdown'
 
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+
 import MMStyle from './merchantMarkdown.module.css'
 
 const MerchantMarkdown = (props) => {
   const scaledImage = (props) => {
-    return <img {...props} style={{ maxWidth: '100%' }} />
+    console.log(props)
+    return <LazyLoadImage alt={props.alt} src={props.src} style={{maxWidth: '100%'}}/>
   }
 
   const merchant = props.merchant

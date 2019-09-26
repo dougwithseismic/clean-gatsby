@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 import './style.css'
@@ -10,6 +10,7 @@ const MerchantDescription = (props) => {
       <h1>
         {merchant.name} {merchant.discountTerm}s 2019
       </h1>
+      <div className="separator" />
       <p>{merchant.description ? merchant.description : <Fragment />}</p>
       <div className="separator" />
       <div className="title-small">Useful Links</div>

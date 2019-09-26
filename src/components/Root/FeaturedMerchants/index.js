@@ -24,7 +24,6 @@ const FeaturedMerchants = (props) => {
       }
     }
   `)
-  console.log(data)
   const featuredMerchantList = data.gcms.merchants
   featuredMerchantList.length = 9
 
