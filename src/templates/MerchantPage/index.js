@@ -16,11 +16,14 @@ import './merchantPage.css'
 const merchantPage = (props) => {
   console.log(props.data.gcms.merchant)
   const merchant = props.data.gcms.merchant
+
+  const metaTitlePlural = merchant.offers.length > 1 ? `${merchant.offers.length} Offers Live ` : 'One active offer'
+
   return (
     <Fragment>
       <SEO
-        title={`Save at ${merchant.name} with our September 2019 ${merchant.discountTerm}s 👩‍🚀 Offers Live - ${merchant
-          .offers.length}. All codes are tested and live. Get our best ${merchant.name} offers today!`}
+        description={`Save at ${merchant.name} with our September 2019 ${merchant.discountTerm}s 👩‍🚀 All codes are tested and live. Get our best ${merchant.name} offers today!`}
+        title={`${merchant.name} ${merchant.discountTerm}s September 2019 - ${metaTitlePlural}`}
       />
 
       <NavBar />
