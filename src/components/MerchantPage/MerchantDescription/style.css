@@ -6,12 +6,12 @@
     background: white;
     padding: 2em;
     border-radius: 5px;
-    min-height: 400px
   }
+
+
 
   .merchant-description-content h1 {
     margin: 0;
-    line-height: 29px;
     color: #140f2b;
   }
 
@@ -58,7 +58,6 @@
 @media only screen and (min-width: 90.063em) {
   .merchant-description-content {
     width: 280px;
-    height: auto
   }
 } /* min-width 1441px, xlarge screens */
 

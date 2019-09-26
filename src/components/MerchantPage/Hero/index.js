@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './style.css'
 
+import mascotPng from '../../../assets/astronaut.png'
+
 const MerchantHero = (props) => {
   const merchant = props.merchant
 
@@ -12,30 +14,31 @@ const MerchantHero = (props) => {
   return (
     <div className="merchant-hero">
       <div className="container">
-        <div className="merchant-hero-logo">
-          <picture>
-            <source srcSet={logoSrcWebp} type="image/webp" />
-            <img alt={`The ${merchant.name} Logo`} src={logoSrcPng} width="100%" height="100%" />
-          </picture>
+        <div className="merchant-left-content">
+          <div className="merchant-hero-logo">
+            <picture>
+              <source srcSet={logoSrcWebp} type="image/webp" />
+              <img alt={`The ${merchant.name} Logo`} src={logoSrcPng} width="100%" height="100%" />
+            </picture>
+          </div>
+          <div className="merchant-hero-details">
+            <h1 className="merchant-hero-title">{merchant.name}</h1>
+            <h3 className="merchant-hero-category">Entertainment / Theatre </h3>
+            <h3 className="merchant-hero-site">
+              Official Website: <a href={merchant.siteUrl}>{merchant.siteName}</a>{' '}
+            </h3>
+          </div>
         </div>
-        <div className="merchant-hero-details">
-          <h1 className="merchant-hero-title">{merchant.name}</h1>
-          <h3 className="merchant-hero-category">Entertainment / Theatre </h3>
-          <h3 className="merchant-hero-site">
-            Official Website:{' '}
-            <a href={merchant.siteUrl}>
-             {merchant.siteName}
-            </a>{' '}
-          </h3>
+        <div className="merchant-right-content">
+          <div className="merchant-mascot">
+            <picture>
+              <source srcSet={mascotPng} type="image/png" />
+              <img alt="Vouchernaut Mascot" src={mascotPng} />
+            </picture>
+          </div>
         </div>
       </div>
-      <div className="container bottom">
-        {/* <div className="tab-group">
-          <div className="tab selected">Offers</div>
-          <div className="tab">Reviews</div>
-          <div className="tab">Feed</div>
-        </div> */}
-      </div>
+
     </div>
   )
 }
