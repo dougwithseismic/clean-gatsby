@@ -32,9 +32,7 @@ const merchantPage = (props) => {
                 </div>
 
                 {merchant.markdown ? (
-                  <div className="merchant-markdown">
                     <MerchantMarkdown merchant={merchant} />
-                  </div>
                 ) : (
                   <Fragment />
                 )}

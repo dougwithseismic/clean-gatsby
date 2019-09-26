@@ -30,11 +30,11 @@ const MerchantHero = (props) => {
         </div>
       </div>
       <div className="container bottom">
-        <div className="tab-group">
+        {/* <div className="tab-group">
           <div className="tab selected">Offers</div>
           <div className="tab">Reviews</div>
           <div className="tab">Feed</div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
