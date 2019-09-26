@@ -13,8 +13,8 @@ const MerchantDescription = (props) => {
       <p>{merchant.description ? merchant.description : <Fragment />}</p>
       <div className="separator" />
       <div className="title-small">Useful Links</div>
-      <div className="button indigo">Visit website</div>
-      <div className="button fuchsia">Read {merchant.name} Reviews</div>
+      <div className="button indigo visit-website">Visit website</div>
+      {/* <div className="button fuchsia read-reviews">Read {merchant.name} Reviews</div> */}
     </div>
   )
 }

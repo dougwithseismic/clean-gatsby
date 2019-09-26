@@ -202,9 +202,7 @@
 
 /* XLarge screens */
 @media only screen and (min-width: 90.063em) {
-  .merchant-description-content {
-    width: 360px;
-  }
+
 } /* min-width 1441px, xlarge screens */
 
 @media only screen and (min-width: 90.063em) and (max-width: 120em) {

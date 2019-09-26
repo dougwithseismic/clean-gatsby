@@ -6,7 +6,10 @@ section {
   transition-duration: .3s;
   font-family: sofia-pro-soft, sans-serif;
   background-color: #f4f4f4;
+}
 
+p {
+  line-height: 1.5em
 }
 
 section {
@@ -33,6 +36,7 @@ section {
   color: white;
   border-radius: 5px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .button.fuchsia {
@@ -43,6 +47,8 @@ section {
   background-color: #140f2b;
 }
 
+
+
 .button::after {
   content: ' ';
   background-image: url("./src/assets/arrow-pointing-to-right.svg");
@@ -51,12 +57,13 @@ section {
   height: 8px;
 }
 
+
+
 .page-container {
   display: flex;
   flex-direction: column;
   min-width: 100vh;
 }
-
 
 /* Small screens - MOBILE */
 @media only screen {
@@ -90,11 +97,8 @@ section {
 
 /* XLarge screens */
 @media only screen and (min-width: 90.063em) {
-
-    .container {
-      }
-    
-
+  .container {
+  }
 } /* min-width 1441px, xlarge screens */
 
 @media only screen and (min-width: 90.063em) and (max-width: 120em) {
