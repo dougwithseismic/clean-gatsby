@@ -8,3 +8,8 @@
 .merchantMarkdown h3 {
     margin-top: 0
 }
+
+.merchantMarkdown p {
+    font-weight: 300;
+    color: #707070
+}
