@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Vouchernaut.com`,
-    description: `Fast discounts. No fuss.`,
-    author: `@gatsbyjs`,
+    description: `Fast discounts. No fuss. Choose out of this world savings all in one space.`,
+    author: `@dougwithseismic`,
     siteUrl: `https://vouchernaut.com`
   },
   plugins: [
