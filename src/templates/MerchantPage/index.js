@@ -2,6 +2,8 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
+import SEO from '../../components/_int/seo'
+
 import NavBar from '../../components/Layout/NavBar'
 import MerchantHero from '../../components/MerchantPage/Hero'
 import MerchantDescription from '../../components/MerchantPage/MerchantDescription'
@@ -16,6 +18,8 @@ const merchantPage = (props) => {
   const merchant = props.data.gcms.merchant
   return (
     <Fragment>
+      <SEO title={`Save at ${merchant.name} with our September 2019 ${merchant.discountTerm}s 👩‍🚀 Offers Live - ${merchant.offers.length}. All codes are tested and live. Get our best ${merchant.name} offers today!`} />
+
       <NavBar />
       <MerchantHero merchant={merchant} />
       <div className="merchant-offer-content">
@@ -30,12 +34,8 @@ const merchantPage = (props) => {
                   <div className="header-left">Latest Voucher Codes</div>
                   <div className="header-right">Live Offers: {merchant.offers.length}</div>
                 </div>
-
-                {merchant.markdown ? (
-                    <MerchantMarkdown merchant={merchant} />
-                ) : (
-                  <Fragment />
-                )}
+                {/* If there's markdown, show it  */}
+                {merchant.markdown ? <MerchantMarkdown merchant={merchant} /> : <Fragment />}
               </div>
             </div>
 
