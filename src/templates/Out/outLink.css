@@ -37,10 +37,9 @@
     align-self: flex-end;
   }
 
-  .all-offers .header-left {
+  .all-offers.header-left {
     text-align: left;
     color: #37003c;
-    font-weight: 500;
   }
 } /* Define mobile styles - Mobile First */
 

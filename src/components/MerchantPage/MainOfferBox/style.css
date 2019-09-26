@@ -1,13 +1,11 @@
 /* Small screens - MOBILE */
 @media only screen {
-
-
-
   .main-offer-box {
     filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.15));
     border-radius: 10px;
     justify-content: center;
     text-align: center;
+    cursor: pointer;
   }
 
   .main-offer-box-top {
@@ -59,9 +57,10 @@
     max-width: 60%;
   }
 
-.main-offer-type, .main-offer-title {
-  margin-left: 1em
-}
+  .main-offer-type,
+  .main-offer-title {
+    margin-left: 1em;
+  }
 
   .main-offer-type {
     color: #ff2882;
@@ -69,7 +68,7 @@
   }
 
   .main-offer-title {
-    text-align: left
+    text-align: left;
   }
 
   .exclusive-badge {
@@ -82,10 +81,8 @@
   }
 
   .main-offer-box-button {
-    margin-right: 5%
+    margin-right: 5%;
   }
-
-
 } /* Define mobile styles - Mobile First */
 
 @media only screen and (max-width: 40em) {
@@ -108,11 +105,22 @@
     height: 125px;
   }
 
+  .main-offer-box:hover .main-offer-box-top {
+    width: 22%;
+  }
+
   .main-offer-box-top {
     border-radius: 10px 0 0 10px;
     height: 100%;
     width: 20%;
     position: relative;
+
+    -webkit-transition: width 0.2s; /* Safari prior 6.1 */
+    transition: width 0.2s;
+  }
+
+  .main-offer-box-top:hover {
+    width: 23%;
   }
 
   .main-offer-box-top span {
@@ -129,15 +137,18 @@
     padding: 0 0 0 4em;
   }
 
+  .main-offer-type,
+  .main-offer-title {
+    margin-left: 0em;
+  }
+
   .main-offer-title {
     font-size: 1.5em;
     text-align: left;
   }
 
-
   .main-offer-type {
     text-align: left;
-
   }
 } /* min-width 641px, medium screens */
 

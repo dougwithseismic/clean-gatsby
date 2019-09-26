@@ -8,6 +8,7 @@ import NavBar from '../../components/Layout/NavBar'
 import MerchantHero from '../../components/MerchantPage/Hero'
 import MerchantDescription from '../../components/MerchantPage/MerchantDescription'
 import MainOfferBox from '../../components/MerchantPage/MainOfferBox'
+import SmallOfferBox from '../../components/MerchantPage/SmallOfferBox'
 import MerchantMarkdown from '../../components/MerchantPage/MerchantMarkdown'
 import Footer from '../../components/Layout/Footer'
 
@@ -16,6 +17,10 @@ import './merchantPage.css'
 const merchantPage = (props) => {
   console.log(props.data.gcms.merchant)
   const merchant = props.data.gcms.merchant
+  const offers = merchant.offers
+  const mainOffer = offers[0]
+
+
 
   const metaTitlePlural = merchant.offers.length > 1 ? `${merchant.offers.length} Offers Live ` : 'One active offer'
 
@@ -34,12 +39,14 @@ const merchantPage = (props) => {
 
           <div className="offers-content container">
             <div className="offers-list">
-              <MainOfferBox merchant={merchant} />
+              <MainOfferBox offer={mainOffer} />
               <div className="all-offers">
                 <div className="offer-headers">
                   <div className="header-left">Latest Voucher Codes</div>
                   <div className="header-right">Live Offers: {merchant.offers.length}</div>
                 </div>
+                <ul>{offers.map((offer) => <SmallOfferBox />)}</ul>
+
                 {/* If there's markdown, show it  */}
                 {merchant.markdown ? <MerchantMarkdown merchant={merchant} /> : <Fragment />}
               </div>

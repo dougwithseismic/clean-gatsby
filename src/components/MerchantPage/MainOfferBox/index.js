@@ -5,11 +5,16 @@ import './style.css'
 import ExclusiveBadge from '../../Atoms/Voucher/exclusive'
 
 const MainOffer = (props) => {
-  const merchant = props.merchant
-  const isExclusive = true
+  const offer = props.offer
+  const merchant = props.offer.merchant
+  const isExclusive = props.offer.isExclusive
+
+  const handleRedemption = () => {
+    console.log("done")
+  }
 
   return (
-    <div className="main-offer-box">
+    <div className="main-offer-box" onClick={handleRedemption}>
       <div className="main-offer-box-top">
         {isExclusive ? (
           <div className="exclusive-badge">
@@ -23,12 +28,11 @@ const MainOffer = (props) => {
         <div className="redeem-button" />
       </div>
       <div className="main-offer-box-detail">
-        <div>
+        <div style={{flex: 1}}>
           <div className="main-offer-type">voucher code</div>
-          <div className="main-offer-title">Save 6% Off All Bookings at {merchant.name}</div>
-          {/* <div className="main-offer-description">
-            Use this code at checkout to Save 6% Off All Bookings at {merchant.name}
-          </div> */}
+          <div className="main-offer-title">
+            {offer.title} at {merchant.name}
+          </div>
         </div>
         <div className="main-offer-box-button">
           <div className="button fuschia button-redeem" />
