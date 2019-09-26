@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './style.css'
 
-import mascotPng from '../../../assets/astronaut.png'
+import mascotPng from '../../../images/astronaut.png'
+import mascotSvg from '../../../images/astronaut.svg'
 
 const MerchantHero = (props) => {
   const merchant = props.merchant
@@ -33,7 +34,7 @@ const MerchantHero = (props) => {
           <div className="merchant-mascot">
             <picture>
               <source srcSet={mascotPng} type="image/png" />
-              <img alt="Vouchernaut Mascot" src={mascotPng} />
+              <img alt="Vouchernaut Mascot" src={mascotSvg} />
             </picture>
           </div>
         </div>
