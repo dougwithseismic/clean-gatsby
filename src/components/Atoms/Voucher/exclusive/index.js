@@ -5,6 +5,7 @@ const exclusiveTag = (props) => {
   return (
     <picture>
     <img
+    alt="The vouchernaut Exclusive Badge"
       src={exclusiveIcon}
       style={{
         maxWidth: '100%',
