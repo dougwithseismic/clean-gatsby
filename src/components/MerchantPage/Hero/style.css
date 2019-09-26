@@ -179,7 +179,7 @@
   .merchant-hero .container {
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .merchant-left-content {
