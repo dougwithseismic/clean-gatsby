@@ -96,7 +96,13 @@
     left: auto;
     width: 80px;
     height: 80px;
-  }
+    transform: scale(1);
+
+-webkit-transition: all 250ms cubic-bezier(0.680, 0, 0.265, 1); /* older webkit */
+-webkit-transition: all 250ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+   -moz-transition: all 250ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+     -o-transition: all 250ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        transition: all 250ms cubic-bezier(0.680, -0.550, 0.265, 1.550); /* easeInOutBack */  }
 
   .main-offer-box {
     display: flex;
@@ -109,6 +115,10 @@
     width: 22%;
   }
 
+  .main-offer-box:hover .exclusive-badge {
+    transform: scale(1.2);
+  }
+
   .main-offer-box-top {
     border-radius: 10px 0 0 10px;
     height: 100%;
@@ -119,9 +129,6 @@
     transition: width 0.2s;
   }
 
-  .main-offer-box-top:hover {
-    width: 23%;
-  }
 
   .main-offer-box-top span {
     display: none;
