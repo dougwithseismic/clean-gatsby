@@ -42,6 +42,17 @@
     color: #37003c;
     font-weight: 500;
   }
+
+  
+  .offer-list-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin:0;
+    padding: 1em 0;
+  }
+
+
 } /* Define mobile styles - Mobile First */
 
 @media only screen and (max-width: 40em) {

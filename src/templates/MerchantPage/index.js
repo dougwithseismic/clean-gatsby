@@ -20,8 +20,6 @@ const merchantPage = (props) => {
   const offers = merchant.offers
   const mainOffer = offers[0]
 
-
-
   const metaTitlePlural = merchant.offers.length > 1 ? `${merchant.offers.length} Offers Live ` : 'One active offer'
 
   return (
@@ -45,7 +43,18 @@ const merchantPage = (props) => {
                   <div className="header-left">Latest Voucher Codes</div>
                   <div className="header-right">Live Offers: {merchant.offers.length}</div>
                 </div>
-                <ul>{offers.map((offer) => <SmallOfferBox />)}</ul>
+                <div className="offer-list-content">
+                  {offers.map((offer) => (
+                      <SmallOfferBox />
+                  ))}
+                  {offers.map((offer) => (
+                      <SmallOfferBox />
+                  ))}
+                  {offers.map((offer) => (
+                      <SmallOfferBox />
+                  ))}
+
+                </div>
 
                 {/* If there's markdown, show it  */}
                 {merchant.markdown ? <MerchantMarkdown merchant={merchant} /> : <Fragment />}
