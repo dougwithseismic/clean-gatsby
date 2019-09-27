@@ -9,7 +9,6 @@
 
   .merchant-offer-content .container {
     flex-direction: column;
-    align-items: flex-start;
   }
 
   .offers-list {
