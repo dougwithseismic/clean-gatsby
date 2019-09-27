@@ -9,7 +9,7 @@ section {
 }
 
 p {
-  line-height: 1.5em
+  line-height: 1.5em;
 }
 
 section {
@@ -47,8 +47,6 @@ section {
   background-color: #140f2b;
 }
 
-
-
 .button::after {
   content: ' ';
   background-image: url("./src/assets/arrow-pointing-to-right.svg");
@@ -57,13 +55,22 @@ section {
   height: 8px;
 }
 
-
-
 .page-container {
   display: flex;
   flex-direction: column;
   min-width: 100vh;
 }
+
+.redeem-link {
+  display: flex;
+  text-decoration: none;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
 
 /* Small screens - MOBILE */
 @media only screen {

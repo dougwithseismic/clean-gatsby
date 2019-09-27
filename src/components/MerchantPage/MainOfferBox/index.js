@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
+import { Link } from '@reach/router'
 import './style.css'
 
 import ExclusiveBadge from '../../Atoms/Voucher/exclusive'
@@ -12,30 +12,35 @@ const MainOffer = ({ offer }) => {
   }
 
   return (
-    <div className="main-offer-box" onClick={handleRedemption}>
-      <div className="main-offer-box-top">
-        {isExclusive ? (
-          <div className="exclusive-badge">
-            <ExclusiveBadge />
-          </div>
-        ) : (
-          <Fragment />
-        )}
+    <div className="main-offer-box" onClick={() => handleRedemption}>
+      <a href={`/out/${id}`} className="redeem-link" target="_blank">
+        <div className="main-offer-box-top">
+          {isExclusive ? (
+            <div className="exclusive-badge">
+              <ExclusiveBadge />
+            </div>
+          ) : (
+            <Fragment />
+          )}
 
-        <div className="box-top-details">{isExclusive ? <span>exclusive</span> : <Fragment />}</div>
-        <div className="redeem-button" />
-      </div>
-      <div className="main-offer-box-detail">
-        <div style={{ flex: 1 }}>
-          <div className="main-offer-type">{isExclusive ? 'Exclusive ' : ''}{offerType}</div>
-          <div className="main-offer-title">
-            {title} at {merchant.name}
+          <div className="box-top-details">{isExclusive ? <span>exclusive</span> : <Fragment />}</div>
+          <div className="redeem-button" />
+        </div>
+        <div className="main-offer-box-detail">
+          <div style={{ flex: 1 }}>
+            <div className="main-offer-type">
+              {isExclusive ? 'Exclusive ' : ''}
+              {offerType}
+            </div>
+            <div className="main-offer-title">
+              {title} at {merchant.name}
+            </div>
+          </div>
+          <div className="main-offer-box-button">
+            <div className="button fuschia button-redeem" />
           </div>
         </div>
-        <div className="main-offer-box-button">
-          <div className="button fuschia button-redeem" />
-        </div>
-      </div>
+      </a>
     </div>
   )
 }
