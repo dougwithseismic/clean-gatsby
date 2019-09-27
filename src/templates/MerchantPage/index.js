@@ -49,7 +49,7 @@ const merchantPage = (props) => {
                   {otherOffers.length > 0 ? (
                     otherOffers.map((offer) => <SmallOfferBox offer={offer} />)
                   ) : (
-                    <div>hello</div>
+                    <Fragment/>
                   )}
                 </div>
 

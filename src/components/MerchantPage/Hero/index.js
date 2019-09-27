@@ -8,9 +8,12 @@ import mascotSvg from '../../../images/astronaut.svg'
 const MerchantHero = (props) => {
   const merchant = props.merchant
 
-  const logoSrcWebp = `https://media.graphcms.com/resize=width:250,height:250/output=format:webp/${merchant.logo
-    .handle}`
-  const logoSrcPng = `https://media.graphcms.com/resize=width:250,height:250/output=format:png/${merchant.logo.handle}`
+  const logoSrcWebp = merchant.logo
+    ? `https://media.graphcms.com/resize=width:250,height:250/output=format:webp/${merchant.logo.handle}`
+    : '/'
+  const logoSrcPng = merchant.logo
+    ? `https://media.graphcms.com/resize=width:250,height:250/output=format:png/${merchant.logo.handle}`
+    : '/'
 
   return (
     <div className="merchant-hero">
@@ -39,7 +42,6 @@ const MerchantHero = (props) => {
           </div>
         </div> */}
       </div>
-
     </div>
   )
 }
