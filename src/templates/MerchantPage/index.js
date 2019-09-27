@@ -90,6 +90,7 @@ export const pageQuery = graphql`
         richContent
         discountTerm
         markdown
+        category
         logo {
           height
           width

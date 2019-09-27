@@ -27,7 +27,7 @@ const MerchantHero = (props) => {
           </div>
           <div className="merchant-hero-details">
             <h1 className="merchant-hero-title">{merchant.name}</h1>
-            <h3 className="merchant-hero-category">Entertainment / Theatre </h3>
+            <h3 className="merchant-hero-category">{merchant.category ? merchant.category : 'Live & Tested Promo Codes'} </h3>
             <h3 className="merchant-hero-site">
               Official Website: <a href={merchant.siteUrl}>{merchant.siteName}</a>{' '}
             </h3>
