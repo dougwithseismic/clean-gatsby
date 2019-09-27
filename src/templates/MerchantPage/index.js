@@ -15,10 +15,12 @@ import Footer from '../../components/Layout/Footer'
 import './merchantPage.css'
 
 const merchantPage = (props) => {
-  console.log(props.data.gcms.merchant)
   const merchant = props.data.gcms.merchant
-  const offers = merchant.offers
-  const mainOffer = offers[0]
+
+  const mainOffer = props.data.gcms.merchant.offers[0]
+  const otherOffers = props.data.gcms.merchant.offers.filter((offer, index) => {
+    return index != 0
+  })
 
   const metaTitlePlural = merchant.offers.length > 1 ? `${merchant.offers.length} Offers Live ` : 'One active offer'
 
@@ -44,16 +46,11 @@ const merchantPage = (props) => {
                   <div className="header-right">Live Offers: {merchant.offers.length}</div>
                 </div>
                 <div className="offer-list-content">
-                  {offers.map((offer) => (
-                      <SmallOfferBox />
-                  ))}
-                  {offers.map((offer) => (
-                      <SmallOfferBox />
-                  ))}
-                  {offers.map((offer) => (
-                      <SmallOfferBox />
-                  ))}
-
+                  {otherOffers.length > 0 ? (
+                    otherOffers.map((offer) => <SmallOfferBox offer={offer} />)
+                  ) : (
+                    <div>hello</div>
+                  )}
                 </div>
 
                 {/* If there's markdown, show it  */}
@@ -100,11 +97,13 @@ export const pageQuery = graphql`
           handle
         }
         offers {
+
           id
           title
           description
           startDate
           endDate
+          offerType
           offerUrl
           useCount
           code

@@ -3,18 +3,20 @@ import PropTypes from 'prop-types'
 
 import './smallOfferBox.css'
 
-const SmallOfferBox = (props) => {
+const SmallOfferBox = ({ offer }) => {
 
-    const handleRedemption = () => {
-        console.log("DONE")
-    }
+  const { id, isExclusive, offerType, title, code, merchant } = offer
+
+  const handleRedemption = () => {
+    console.log('Redeeming %s - %s', id, merchant.name)
+  }
   return (
     <div className="small-offer-box" onClick={handleRedemption}>
       <div className="small-box-left" />
       <div className="small-box-detail">
         <div className="detail-holder">
-          <div className="detail-type">voucher code</div>
-          <div className="detail-title">20% Off full Price Sneakers & Title That's Way too long. Period</div>
+          <div className="detail-type">{isExclusive ? 'Exclusive ' : ''}{offerType}</div>
+          <div className="detail-title">{title} at {merchant.name}</div>
         </div>
 
         <div className="button fuschia button-redeem" />

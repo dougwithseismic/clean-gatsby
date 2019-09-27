@@ -7,7 +7,6 @@ import MMStyle from './merchantMarkdown.module.css'
 
 const MerchantMarkdown = (props) => {
   const scaledImage = (props) => {
-    console.log(props)
     return <LazyLoadImage alt={props.alt} src={props.src} style={{maxWidth: '100%'}}/>
   }
 
