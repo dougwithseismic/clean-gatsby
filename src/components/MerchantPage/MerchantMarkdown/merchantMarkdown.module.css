@@ -13,3 +13,17 @@
     font-weight: 300;
     color: #707070
 }
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    border-bottom: 1px solid black;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+  }
+

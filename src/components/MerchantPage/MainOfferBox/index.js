@@ -4,13 +4,11 @@ import './style.css'
 
 import ExclusiveBadge from '../../Atoms/Voucher/exclusive'
 
-const MainOffer = (props) => {
-  const offer = props.offer
-  const merchant = props.offer.merchant
-  const isExclusive = props.offer.isExclusive
+const MainOffer = ({ offer }) => {
+  const { id, merchant, isExclusive, title, offerType } = offer
 
   const handleRedemption = () => {
-    console.log("done")
+    console.log('Redeeming %s - %s', id, merchant.name)
   }
 
   return (
@@ -28,10 +26,10 @@ const MainOffer = (props) => {
         <div className="redeem-button" />
       </div>
       <div className="main-offer-box-detail">
-        <div style={{flex: 1}}>
-          <div className="main-offer-type">voucher code</div>
+        <div style={{ flex: 1 }}>
+          <div className="main-offer-type">{isExclusive ? 'Exclusive ' : ''}{offerType}</div>
           <div className="main-offer-title">
-            {offer.title} at {merchant.name}
+            {title} at {merchant.name}
           </div>
         </div>
         <div className="main-offer-box-button">
