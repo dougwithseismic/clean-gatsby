@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import SEO from '../../components/_int/seo'
-import Modal from '../../components/common/Modal'
 
 import NavBar from '../../components/Layout/NavBar'
 import MerchantHero from '../../components/MerchantPage/Hero'

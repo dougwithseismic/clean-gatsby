@@ -1,33 +1,31 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from '@reach/router'
+import React, { useContext } from 'react'
+import { handleRedemption } from '../../../utility/redemptions/Helpers'
+import ModalContext from '../../../context/ModalContext'
 
 import './smallOfferBox.css'
 
 const SmallOfferBox = ({ offer }) => {
-  const { id, isExclusive, offerType, title, code, merchant } = offer
+  const { isExclusive, offerType, title, code, merchant } = offer
+  const modalContext = useContext(ModalContext)
 
-  const handleRedemption = () => {
-    console.log('Redeeming %s - %s', id, merchant.name)
-  }
   return (
-    <div className="small-offer-box" onClick={handleRedemption}>
-      <a href={`/out/${id}`} className="redeem-link" target="_blank">
-        <div className="small-box-left" />
-        <div className="small-box-detail">
-          <div className="detail-holder">
-            <div className="detail-type">
-              {isExclusive ? 'Exclusive ' : ''}
-              {offerType}
-            </div>
-            <div className="detail-title">
-              {title} at {merchant.name}
-            </div>
+    <div className="small-offer-box" onClick={() => handleRedemption(modalContext, offer)}>
+      {/* <a href={`/out/${id}`} className="redeem-link" target="_blank"> */}
+      <div className="small-box-left" />
+      <div className="small-box-detail">
+        <div className="detail-holder">
+          <div className="detail-type">
+            {isExclusive ? 'Exclusive ' : ''}
+            {offerType}
           </div>
-
-          <div className="button fuschia button-redeem" />
+          <div className="detail-title">
+            {title} at {merchant.name}
+          </div>
         </div>
-      </a>
+
+        <div className="button fuschia button-redeem" />
+      </div>
+      {/* </a> */}
     </div>
   )
 }

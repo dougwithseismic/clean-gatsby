@@ -2,7 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react'
 import { Router, navigate } from '@reach/router'
 import axios from 'axios'
 
-const Home = ({ id }) => {
+const OfferOut = ({ id }) => {
   const [ loading, setLoading ] = useState(true)
   const [ offerDetails, setOfferDetails ] = useState()
 
@@ -73,8 +73,8 @@ const Details = () => {
 const OutLink = (props) => {
   return (
     <Router>
-      <Home path="/out/:id" />
-      <Details path="/out/details" />
+      <OfferOut path="/out/:id" />
+      <Details path="/out/store/:id" />
     </Router>
   )
 }

@@ -1,12 +1,12 @@
 /* Small screens - MOBILE */
 @media only screen {
   .merchant-description-content {
+    align-self: inherit;
     font-size: 10px;
     order: 2;
     background: white;
     padding: 2em;
     border-radius: 5px;
-    align-self: flex-start
   }
 
 
@@ -45,6 +45,8 @@
     order: 1;
     border-radius: 5px;
     width: 180px;
+    align-self: flex-start;
+
   }
 
   .merchant-description-content h1 {

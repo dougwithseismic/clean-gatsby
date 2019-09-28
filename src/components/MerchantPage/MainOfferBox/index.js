@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from 'react'
-import { Link } from '@reach/router'
 import './style.css'
 import ModalContext from '../../../context/ModalContext'
+import { handleRedemption } from '../../../utility/redemptions/Helpers'
 
 import ExclusiveBadge from '../../Atoms/Voucher/exclusive'
 
@@ -9,14 +9,8 @@ const MainOffer = ({ offer }) => {
   const { id, merchant, isExclusive, title, offerType } = offer
   const modalContext = useContext(ModalContext)
 
-
-  const handleRedemption = () => {
-    modalContext.toggleModal()
-    console.log('Redeeming %s - %s', id, merchant.name)
-  }
-
   return (
-    <div className="main-offer-box" onClick={handleRedemption}>
+    <div className="main-offer-box" onClick={() => handleRedemption(modalContext, offer)}>
       <a href={`/out/${id}`} className="redeem-link" target="_blank">
         <div className="main-offer-box-top">
           {isExclusive ? (
@@ -48,7 +42,5 @@ const MainOffer = ({ offer }) => {
     </div>
   )
 }
-
-MainOffer.propTypes = {}
 
 export default MainOffer
