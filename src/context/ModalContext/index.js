@@ -19,6 +19,7 @@ const ModalProvider = (props) => {
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen)
+    console.log("I OPEN THE MODAL HERE")
   }
 
   const spitGarbage = () => {

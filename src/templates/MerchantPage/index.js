@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import SEO from '../../components/_int/seo'
+import Modal from '../../components/common/Modal'
 
 import NavBar from '../../components/Layout/NavBar'
 import MerchantHero from '../../components/MerchantPage/Hero'
@@ -46,11 +47,7 @@ const merchantPage = (props) => {
                   <div className="header-right">Live Offers: {merchant.offers.length}</div>
                 </div>
                 <div className="offer-list-content">
-                  {otherOffers.length > 0 ? (
-                    otherOffers.map((offer) => <SmallOfferBox offer={offer} />)
-                  ) : (
-                    <Fragment/>
-                  )}
+                  {otherOffers.length > 0 ? otherOffers.map((offer) => <SmallOfferBox offer={offer} />) : <Fragment />}
                 </div>
 
                 {/* If there's markdown, show it  */}
@@ -98,7 +95,6 @@ export const pageQuery = graphql`
           handle
         }
         offers {
-
           id
           title
           description
