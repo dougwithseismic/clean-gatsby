@@ -67,6 +67,10 @@ section {
   width: 100%;
 }
 
+.redeem-link.center {
+  flex-direction: column
+}
+
 a {
   color: inherit;
 }

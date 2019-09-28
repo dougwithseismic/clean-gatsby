@@ -2,6 +2,8 @@ import React, { useState, useEffect, Fragment } from 'react'
 import { Router, navigate } from '@reach/router'
 import axios from 'axios'
 
+import SEO from '../../components/_int/seo'
+
 const OfferOut = ({ id }) => {
   const [ loading, setLoading ] = useState(true)
   const [ offerDetails, setOfferDetails ] = useState()
@@ -63,18 +65,77 @@ const OfferOut = ({ id }) => {
 
   setTimeout(navigate(offerDetails.merchant.siteUrl, { replace: true }), 2500)
 
-  return <div>Cool - We're redirecting you to {offerDetails.merchant.name} </div>
+  return (
+    <Fragment>
+      <SEO title={`Activating Code: ${offerDetails.merchant.name}`} />
+      <div>Cool - We're redirecting you to {offerDetails.merchant.name} </div>
+    </Fragment>
+  )
 }
 
-const Details = () => {
-  return <div>Details</div>
+const MerchantOut = ({ id }) => {
+  const [ loading, setLoading ] = useState(true)
+  const [ merchantDetails, setMerchantDetails ] = useState()
+
+  useEffect(() => {
+    // Checks GraphCMS to see if the id exists and if so, launches.
+    axios({
+      url: 'https://api-euwest.graphcms.com/v1/cjzrdgkoh3ujn01g3gxtuckky/master',
+      method: 'post',
+      data: {
+        query: `
+      query GetMerchant($merchantId: ID!){
+        merchant(where: {id: $merchantId}) {
+              name
+              siteUrl
+              slug
+              logo {
+                height
+                width
+                url
+                handle
+          }
+        }
+      }
+        `,
+        variables: {
+          merchantId: id
+        }
+      }
+    }).then((result) => {
+      console.log(result)
+      if (result.data.data.offer !== null) {
+        console.log("done")
+        setMerchantDetails(result.data.data.merchant)
+        setLoading(false)
+        navigate(result.data.data.merchant.siteUrl, { replace: true })
+
+        // do GA events etc
+      } else {
+        console.log('DIDNT FIND')
+        window.history.back()
+      }
+    })
+  }, [])
+
+  if (loading) {
+    return <Fragment />
+  }
+
+
+  return (
+    <Fragment>
+      <SEO title={`Activating Code: ${merchantDetails.name}`} />
+      <div>fuck</div>
+    </Fragment>
+  )
 }
 
 const OutLink = (props) => {
   return (
     <Router>
       <OfferOut path="/out/:id" />
-      <Details path="/out/store/:id" />
+      <MerchantOut path="/out/store/:id" />
     </Router>
   )
 }

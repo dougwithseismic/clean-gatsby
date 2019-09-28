@@ -1,0 +1,28 @@
+/* Small screens - MOBILE */
+@media only screen {
+  .code-capture {
+    font-size: 1.5em;
+    padding: 0.8em 1.5em;
+    border: 1px dashed #707070;
+    border-radius: 10px;
+    margin: 0.8em 0;
+    background-color: #e7e7e74d;
+    min-width: 60%
+  }
+} /* Define mobile styles - Mobile First */
+
+/* Medium screens - TABLET */
+@media only screen and (min-width: 40.063em) {
+} /* min-width 641px, medium screens */
+
+/* Large screens - DESKTOP */
+@media only screen and (min-width: 64.063em) {
+} /* min-width 1025px, large screens */
+
+/* XLarge screens */
+@media only screen and (min-width: 90.063em) {
+} /* min-width 1441px, xlarge screens */
+
+/* XXLarge screens */
+@media only screen and (min-width: 120.063em) {
+} /* min-width 1921px, xlarge screens */

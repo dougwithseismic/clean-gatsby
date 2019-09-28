@@ -19,7 +19,7 @@ const merchantPage = (props) => {
 
   const mainOffer = props.data.gcms.merchant.offers[0]
   const otherOffers = props.data.gcms.merchant.offers.filter((offer, index) => {
-    return index != 0
+    return index !== 0
   })
 
   const metaTitlePlural = merchant.offers.length > 1 ? `${merchant.offers.length} Offers Live ` : 'One active offer'

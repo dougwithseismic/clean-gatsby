@@ -1,6 +1,9 @@
 import React, { useContext, Fragment } from 'react'
 
 import ModalContext from '../../../../context/ModalContext'
+import CodeModal from './CodeModal'
+import DealModal from './DealModal'
+import './style.css'
 
 const OfferModal = () => {
   const modalContext = useContext(ModalContext)
@@ -16,27 +19,10 @@ const OfferModal = () => {
     window.location.href = offer.merchant.siteUrl
   }
 
-  return (
-    <div className="offer-modal-content">
-      {offer.isExclusive ? <span className="exclusive">Exclusive</span> : <Fragment />}
-      <h3>
-        {`${offer.title} at ${offer.merchant.name}`}
-      </h3>
+  if (offer.offerType === 'Code') return <CodeModal />
+  if (offer.offerType === 'Deal') return <DealModal />
 
-      {offer.code ? (
-        <Fragment>
-          <span className="use-details">Copy the code below and enter it at checkout</span>
-          <span className="show-code">{offer.code}</span>
-        </Fragment>
-      ) : (
-        <span className="show-code">Deal Activated!</span>
-      )}
-
-      <div className="visit-shop" onClick={() => handleVisitShop()}>
-        Visit Shop
-      </div>
-    </div>
-  )
+  return <div>shouldnt be seen</div>
 }
 
 OfferModal.propTypes = {}

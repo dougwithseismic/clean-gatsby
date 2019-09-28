@@ -5,12 +5,12 @@ import ModalContext from '../../../context/ModalContext'
 import './smallOfferBox.css'
 
 const SmallOfferBox = ({ offer }) => {
-  const { isExclusive, offerType, title, code, merchant } = offer
+  const { id, isExclusive, offerType, title, code, merchant } = offer
   const modalContext = useContext(ModalContext)
 
   return (
     <div className="small-offer-box" onClick={() => handleRedemption(modalContext, offer)}>
-      {/* <a href={`/out/${id}`} className="redeem-link" target="_blank"> */}
+      <a href={`/out/${id}`} className="redeem-link" target="_blank">
       <div className="small-box-left" />
       <div className="small-box-detail">
         <div className="detail-holder">
@@ -25,7 +25,7 @@ const SmallOfferBox = ({ offer }) => {
 
         <div className="button fuschia button-redeem" />
       </div>
-      {/* </a> */}
+      </a>
     </div>
   )
 }
