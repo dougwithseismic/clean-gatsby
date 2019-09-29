@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import './style.css'
 
 import greenVouchernaut from '../../../../assets/green_vouchernaut.svg'
@@ -22,10 +22,18 @@ const CodeRedeem = ({ offerDetails }) => {
         </div>
         <h1 className="redeem-out-title">{`Please wait, we're taking you to ${offerDetails.merchant.name}..`}</h1>
         <p>{`${offerDetails.title} at ${offerDetails.merchant.name}`}</p>
-        <div className="code-capture">{offerDetails.code}</div>
-        <p className="redeem-out-info">
-          Complete your purchase and add the code at checkout. Don't forget to copy the code from your vouchernaut tab
-        </p>
+
+        {offerDetails.offerType === 'Code' ? (
+          <Fragment>
+            <div className="code-capture">{offerDetails.code}</div>
+            <p className="redeem-out-info">
+              Complete your purchase and add the code at checkout. Don't forget to copy the code from your vouchernaut
+              tab
+            </p>
+          </Fragment>
+        ) : (
+          <Fragment />
+        )}
       </div>
     </div>
   )
