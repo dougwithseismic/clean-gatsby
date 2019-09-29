@@ -21,7 +21,7 @@ const IndexPage = () => {
         <HeroRoot />
 
         {/* Featured Offers */}
-        <FeaturedOffers />
+        {/* <FeaturedOffers /> */}
 
         {/* Featured Merchants */}
         <FeaturedMerchants />
