@@ -33,3 +33,21 @@ export const handleStoreVisit = (offer) => {
   window.location.href = `/out/store/${offer.merchant.id}`
   console.log('handle store visit')
 }
+
+// REFACTOR THIS SHIT SHOW
+export const handleStoreVisitMerchant = (merchant) => {
+  // GTM Event
+  //    Object
+  // event:"Store Visit Link"
+  // merchant:"Theatre Tickets Direct"
+
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({
+    event: 'Store Visit Link',
+    merchant: merchant.name,
+  })
+
+
+  window.location.href = `/out/store/${merchant.id}`
+  console.log('handle store visit')
+}

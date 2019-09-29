@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
+import { handleStoreVisitMerchant } from '../../../utility/redemptions/Helpers'
 
 import './style.css'
 
@@ -13,7 +13,9 @@ const MerchantDescription = (props) => {
       <div className="separator" />
       <p>{merchant.description ? merchant.description : <Fragment />}</p>
       <div className="title-small">Useful Links</div>
-      <div className="button indigo visit-website">Visit website</div>
+      <div className="button indigo visit-website" onClick={() => handleStoreVisitMerchant(merchant)}>
+        Visit website
+      </div>
       {/* <div className="button fuchsia read-reviews">Read {merchant.name} Reviews</div> */}
     </div>
   )
