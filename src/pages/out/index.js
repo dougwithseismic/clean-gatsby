@@ -3,6 +3,10 @@ import { Router, navigate } from '@reach/router'
 import axios from 'axios'
 
 import SEO from '../../components/_int/seo'
+import NavBar from '../../components/Layout/NavBar'
+import CodeRedeem from '../../components/Out/Offer/CodeRedeem'
+
+import './style.css'
 
 const OfferOut = ({ id }) => {
   const [ loading, setLoading ] = useState(true)
@@ -63,12 +67,13 @@ const OfferOut = ({ id }) => {
     return <Fragment />
   }
 
-  setTimeout(navigate(offerDetails.merchant.siteUrl, { replace: true }), 2500)
+  setTimeout(navigate(offerDetails.merchant.siteUrl, { replace: true }), 2000)
 
   return (
     <Fragment>
+      <NavBar />
       <SEO title={`Activating Code: ${offerDetails.merchant.name}`} />
-      <div>Cool - We're redirecting you to {offerDetails.merchant.name} </div>
+      <CodeRedeem offerDetails={offerDetails} />
     </Fragment>
   )
 }
@@ -105,7 +110,7 @@ const MerchantOut = ({ id }) => {
     }).then((result) => {
       console.log(result)
       if (result.data.data.offer !== null) {
-        console.log("done")
+        console.log('done')
         setMerchantDetails(result.data.data.merchant)
         setLoading(false)
         navigate(result.data.data.merchant.siteUrl, { replace: true })
@@ -122,11 +127,9 @@ const MerchantOut = ({ id }) => {
     return <Fragment />
   }
 
-
   return (
     <Fragment>
       <SEO title={`Activating Code: ${merchantDetails.name}`} />
-      <div>fuck</div>
     </Fragment>
   )
 }
