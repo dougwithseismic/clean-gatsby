@@ -8,6 +8,19 @@ import CodeRedeem from '../../components/Out/Offer/CodeRedeem'
 
 import './style.css'
 
+const getCID = () => {
+  try {
+    var trackers = window.ga.getAll()
+    var i, len
+    for (i = 0, len = trackers.length; i < len; i += 1) {
+      if (trackers[i].get('trackingId') === 'UA-146396173-1') {
+        return trackers[i].get('clientId')
+      }
+    }
+  } catch (e) {}
+  return 'false'
+}
+
 const OfferOut = ({ id }) => {
   const [ loading, setLoading ] = useState(true)
   const [ offerDetails, setOfferDetails ] = useState()
@@ -55,7 +68,7 @@ const OfferOut = ({ id }) => {
       if (result.data.data.offer !== null) {
         setOfferDetails(result.data.data.offer)
         setLoading(false)
-        // do GA events etc
+
       } else {
         console.log('DIDNT FIND')
         window.history.back()
@@ -67,7 +80,14 @@ const OfferOut = ({ id }) => {
     return <Fragment />
   }
 
-  setTimeout(navigate(offerDetails.merchant.siteUrl, { replace: true }), 2000)
+  const CID = getCID()
+  let finalUrl = CID
+    ? offerDetails.merchant.siteUrl.split('&p=').join(`&clickref=${CID}&`)
+    : offerDetails.merchant.siteUrl
+
+  console.log(finalUrl)
+
+  setTimeout(navigate(finalUrl, { replace: true }), 3000)
 
   return (
     <Fragment>
@@ -113,8 +133,15 @@ const MerchantOut = ({ id }) => {
         console.log('done')
         setMerchantDetails(result.data.data.merchant)
         setLoading(false)
-        navigate(result.data.data.merchant.siteUrl, { replace: true })
 
+        const CID = getCID()
+        let finalUrl = CID
+          ? result.data.data.merchant.siteUrl.split('&p=').join(`&clickref=${CID}&`)
+          : result.data.data.merchant.siteUrl
+      
+        console.log(finalUrl)
+      
+        setTimeout(navigate(finalUrl, { replace: true }), 3000)
         // do GA events etc
       } else {
         console.log('DIDNT FIND')
