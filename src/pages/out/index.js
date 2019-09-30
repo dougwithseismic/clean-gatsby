@@ -64,13 +64,10 @@ const OfferOut = ({ id }) => {
         }
       }
     }).then((result) => {
-      console.log(result)
       if (result.data.data.offer !== null) {
         setOfferDetails(result.data.data.offer)
         setLoading(false)
-
       } else {
-        console.log('DIDNT FIND')
         window.history.back()
       }
     })
@@ -85,9 +82,8 @@ const OfferOut = ({ id }) => {
     ? offerDetails.merchant.siteUrl.split('&p=').join(`&clickref=${CID}&`)
     : offerDetails.merchant.siteUrl
 
-  console.log(finalUrl)
-
-  setTimeout(navigate(finalUrl, { replace: true }), 2500)
+  //setTimeout(navigate(finalUrl, { replace: true }), 2500)
+  setTimeout(() => navigate(finalUrl, { replace: true }), 2500)
 
   return (
     <Fragment>
@@ -130,7 +126,6 @@ const MerchantOut = ({ id }) => {
     }).then((result) => {
       console.log(result)
       if (result.data.data.offer !== null) {
-        console.log('done')
         setMerchantDetails(result.data.data.merchant)
         setLoading(false)
 
@@ -138,11 +133,10 @@ const MerchantOut = ({ id }) => {
         let finalUrl = CID
           ? result.data.data.merchant.siteUrl.split('&p=').join(`&clickref=${CID}&`)
           : result.data.data.merchant.siteUrl
-      
-        console.log(finalUrl)
-      
-        setTimeout(navigate(finalUrl, { replace: true }), 2500)
-        // do GA events etc
+
+  setTimeout(() => navigate(finalUrl, { replace: true }), 2500)
+
+  // do GA events etc
       } else {
         console.log('DIDNT FIND')
         window.history.back()
