@@ -87,7 +87,7 @@ const OfferOut = ({ id }) => {
 
   console.log(finalUrl)
 
-  setTimeout(navigate(finalUrl, { replace: true }), 3000)
+  setTimeout(navigate(finalUrl, { replace: true }), 2500)
 
   return (
     <Fragment>
@@ -141,7 +141,7 @@ const MerchantOut = ({ id }) => {
       
         console.log(finalUrl)
       
-        setTimeout(navigate(finalUrl, { replace: true }), 3000)
+        setTimeout(navigate(finalUrl, { replace: true }), 2500)
         // do GA events etc
       } else {
         console.log('DIDNT FIND')
