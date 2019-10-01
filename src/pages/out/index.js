@@ -74,7 +74,12 @@ const OfferOut = ({ id }) => {
   }, [])
 
   if (loading) {
-    return <Fragment />
+    return (
+      <Fragment>
+        <NavBar />
+        <SEO title="Please wait..! Activating Code." />
+      </Fragment>
+    )
   }
 
   const CID = getCID()
@@ -88,7 +93,7 @@ const OfferOut = ({ id }) => {
   return (
     <Fragment>
       <NavBar />
-      <SEO title={`Activating Code: ${offerDetails.merchant.name}`} />
+      <SEO title={`Activating Code: ${offerDetails.merchant.name} - ${offerDetails.title}`} />
       <CodeRedeem offerDetails={offerDetails} />
     </Fragment>
   )
@@ -134,9 +139,9 @@ const MerchantOut = ({ id }) => {
           ? result.data.data.merchant.siteUrl.split('&p=').join(`&clickref=${CID}&`)
           : result.data.data.merchant.siteUrl
 
-  setTimeout(() => navigate(finalUrl, { replace: true }), 2500)
+        setTimeout(() => navigate(finalUrl, { replace: true }), 2500)
 
-  // do GA events etc
+        // do GA events etc
       } else {
         console.log('DIDNT FIND')
         window.history.back()
@@ -145,12 +150,17 @@ const MerchantOut = ({ id }) => {
   }, [])
 
   if (loading) {
-    return <Fragment />
+    return (
+      <Fragment>
+        <NavBar />
+        <SEO title={`Visiting Store - Please wait! `} />
+      </Fragment>
+    )
   }
 
   return (
     <Fragment>
-      <SEO title={`Activating Code: ${merchantDetails.name}`} />
+      <SEO title={`Visiting Store: ${merchantDetails.name}`} />
     </Fragment>
   )
 }
