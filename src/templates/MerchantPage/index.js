@@ -27,7 +27,7 @@ const merchantPage = (props) => {
   return (
     <Fragment>
       <SEO
-        description={`Save at ${merchant.name} with our September 2019 ${merchant.discountTerm}s 👩‍🚀 - ${metaTitlePlural} - All codes are tested and live. Get our best ${merchant.name} offers today!`}
+        description={`Save at ${merchant.name} with our October 2019 ${merchant.discountTerm}s 👩‍🚀 - ${metaTitlePlural} - All codes are tested and live. Get our best ${merchant.name} offers today!`}
         title={`${merchant.name} ${merchant.discountTerm}s 🚀`}
       />
 
