@@ -18,7 +18,7 @@ const getCID = () => {
       }
     }
   } catch (e) {}
-  return 'false'
+  return false
 }
 
 const OfferOut = ({ id }) => {
