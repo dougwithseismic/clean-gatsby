@@ -15,7 +15,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               node {
                 id
                 slug
-
+                status
               }
             }
           }
@@ -36,18 +36,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const merchantPageTemplate = path.resolve(`src/templates/MerchantPage/index.js`)
   result.data.gcms.merchantsConnection.edges.forEach(({ node }) => {
     const slug = node.slug
-    createPage({
-      path: slug,
-      component: merchantPageTemplate,
-      // In your blog post template's graphql query, you can use path
-      // as a GraphQL variable to query for data from the markdown file.
-      context: {
-        slug
-      }
-    })
+    if (node.status !== 'DRAFT') {
+      createPage({
+        path: slug,
+        component: merchantPageTemplate,
+        // In your blog post template's graphql query, you can use path
+        // as a GraphQL variable to query for data from the markdown file.
+        context: {
+          slug
+        }
+      })
+    }
   })
 }
-
 
 exports.onCreatePage = async ({ page, actions }) => {
   const { createPage } = actions
@@ -56,7 +57,7 @@ exports.onCreatePage = async ({ page, actions }) => {
   if (page.path.match(/^\/out/)) {
     page.matchPath = `/out/*`
 
-    console.log("SHOW ME")
+    console.log('SHOW ME')
 
     // Update the page.
     createPage(page)
