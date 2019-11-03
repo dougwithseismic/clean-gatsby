@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "clean-gatsby",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "version": "1.0.0",
+  "author": "Doug Silkston",
   "dependencies": {
     "axios": "^0.19.0",
     "gatsby": "^2.13.73",
@@ -41,11 +41,9 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
+  "repository": "https://github.com/gatsbyjs/gatsby-starter-default",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  },
+  "main": "index.js"
 }

@@ -7,113 +7,21 @@ section {
   font-family: sofia-pro-soft, sans-serif;
   background-color: #f4f4f4;
 }
-
-p {
-  line-height: 1.5em;
-}
-
-section {
-  display: flex;
-  justify-content: center;
-}
-
-.spacer {
-  display: block;
-  height: 3em;
-  background: transparent;
-}
-
-.separator {
-  border-top: 1px solid #eeeeee;
-  height: 1px;
-  margin: 1em 0;
-}
-
-.button {
-  background-color: #ff2882;
-  padding: 1em;
-  margin: 10px 0;
-  color: white;
-  border-radius: 5px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.button.fuchsia {
-  background-color: #ff2882;
-}
-
-.button.indigo {
-  background-color: #140f2b;
-}
-
-.button::after {
-  content: ' ';
-  background-image: url("./src/assets/arrow-pointing-to-right.svg");
-  background-size: cover;
-  width: 12px;
-  height: 8px;
-}
-
-.page-container {
-  display: flex;
-  flex-direction: column;
-  min-width: 100vh;
-}
-
-.redeem-link {
-  display: flex;
-  text-decoration: none;
-  width: 100%;
-}
-
-.redeem-link.center {
-  flex-direction: column
-}
-
-a {
-  color: inherit;
-}
-
-
 /* Small screens - MOBILE */
 @media only screen {
-  .container {
-    display: flex;
-    font-family: sofia-pro-soft, sans-serif;
-    width: 100%;
-  }
 } /* Define mobile styles - Mobile First */
-
-@media only screen and (max-width: 40em) {
-} /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 
 /* Medium screens - TABLET */
 @media only screen and (min-width: 40.063em) {
 } /* min-width 641px, medium screens */
 
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
-} /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
-
 /* Large screens - DESKTOP */
 @media only screen and (min-width: 64.063em) {
-  .container {
-    width: 80%;
-    max-width: 1440px;
-  }
 } /* min-width 1025px, large screens */
-
-@media only screen and (min-width: 64.063em) and (max-width: 90em) {
-} /* min-width 1024px and max-width 1440px, use when QAing large screen-only issues */
 
 /* XLarge screens */
 @media only screen and (min-width: 90.063em) {
-  .container {
-  }
 } /* min-width 1441px, xlarge screens */
-
-@media only screen and (min-width: 90.063em) and (max-width: 120em) {
-} /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
 
 /* XXLarge screens */
 @media only screen and (min-width: 120.063em) {
