@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "author": "Doug Silkston",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "gatsby": "^2.13.73",
     "gatsby-image": "^2.2.10",
     "gatsby-plugin-google-tagmanager": "^2.1.7",
